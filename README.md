@@ -74,7 +74,7 @@ Visit `http://localhost:3000` to see your GitBase instance running locally.
 
 For a detailed deployment guide, please refer to our [Installation and Deployment Guide](https://gitbase.app/posts/gitbase-install-guide).
 
-## Usage
+## Usagess 
 
 - Access the admin panel by navigating to `/admin` and using your `ACCESS_PASSWORD`.
 - Create and edit articles through the admin interface.
