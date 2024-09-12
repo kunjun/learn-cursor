@@ -1,5 +1,11 @@
+import { Metadata } from 'next';
 import VideoGrid from '@/components/VideoGrid';
 import { videos } from '@/data/videos';
+
+export const metadata: Metadata = {
+  title: 'All Cursor Tutorials - Learn Cursor Composer and AI Code Editor',
+  description: 'Explore our complete collection of Cursor tutorials. Learn how to use Cursor Composer, IDE features, and AI-powered coding tools to enhance your programming skills and efficiency.',
+}
 
 export default function AllTutorials() {
   return (

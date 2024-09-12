@@ -1,5 +1,6 @@
 import VideoStats from '@/components/VideoStats'
 import { notFound } from 'next/navigation'
+import { Metadata } from 'next'
 
 // 这里应该从你的数据源获取视频数据
 const getVideoById = (id: string) => {
@@ -55,6 +56,22 @@ const getVideoById = (id: string) => {
     }
   ]
   return videos.find(video => video.id === id)
+}
+
+export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
+  const video = getVideoById(params.id)
+  
+  if (!video) {
+    return {
+      title: 'Video Not Found',
+      description: 'The requested Cursor tutorial video could not be found.',
+    }
+  }
+
+  return {
+    title: `${video.title} - Learn Cursor Tutorial`,
+    description: `${video.description} Discover how to use Cursor Composer and AI-powered coding features in this comprehensive tutorial.`,
+  }
 }
 
 export default function VideoPage({ params }: { params: { id: string } }) {

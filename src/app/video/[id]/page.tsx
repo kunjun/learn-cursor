@@ -1,5 +1,6 @@
 import { videos } from '@/data/videos'
 import { notFound } from 'next/navigation'
+import type { Metadata } from 'next'
 
 export default function VideoPage({ params }: { params: { id: string } }) {
   const video = videos.find(v => v.id === params.id)
@@ -25,4 +26,24 @@ export default function VideoPage({ params }: { params: { id: string } }) {
       <p className="text-lg">{video.description}</p>
     </div>
   )
+}
+
+function getVideoById(id: string) {
+  return videos.find(v => v.id === id)
+}
+
+export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
+  const video = getVideoById(params.id)
+  
+  if (!video) {
+    return {
+      title: 'Video Not Found',
+      description: 'The requested Cursor tutorial video could not be found.',
+    }
+  }
+
+  return {
+    title: `${video.title} - Learn Cursor Tutorial`,
+    description: `${video.description} Discover how to use Cursor Composer and AI-powered coding features in this comprehensive tutorial.`,
+  }
 }

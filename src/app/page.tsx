@@ -6,8 +6,8 @@ import VideoGrid from '@/components/VideoGrid'
 import { videos } from '@/data/videos';
 
 export const metadata: Metadata = {
-  title: 'GitBase - Open Source Dynamic Website CMS Without Database',
-  description: 'A Next.js site with Tailwind & Shadcn/UI, using GitHub API for content management. No database needed for dynamic updates.',
+  title: 'Learn Cursor - Tutorials for Cursor Composer, IDE, and AI Code Editor',
+  description: 'Learn Cursor offers comprehensive tutorials for Cursor Composer, a core feature of the Cursor IDE and AI code editor. Discover expert tips, video guides, and core features to enhance your coding skills. Visit now to master Cursor and boost your programming efficiency.',
 }
 
 export default function Home() {
