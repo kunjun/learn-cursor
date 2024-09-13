@@ -2,7 +2,7 @@
 title: What's Cursor Composer? How to Build Full Apps with AI
 description: 'Cursor Composer: A Powerful Beta Feature for Multi-File Editing'
 date: '2024-08-11T13:16:44.231Z'
-lastModified: '2024-09-13T06:41:24.377Z'
+lastModified: '2024-09-13T06:44:18.789Z'
 ---
 # Cursor Composer: A Powerful Beta Feature for Multi-File Editing
 
@@ -16,21 +16,17 @@ Composer in Cursor can pretty much write a full app for you (within reason). It 
 
 Provide it with instructions, and away it goes. If you haven't guessed already from the hero image, I went ahead and used Composer and Claude to create a Duolingo clone app as a demo. Here's the entire process on video:
 
-[视频入口占位符]
-
-You can try the live version here too:
-
-[Duolingo Clone 链接占位符]
+[https://youtu.be/W4QmPwNwt8E]
 
 ## How to access Composer: Cursor Settings
 
 Since Cursor 0.40, Composer turned on by default, but you can also turn it on and off from Cursor Settings. Access it here Cursor>Settings>Cursor Settings:
 
-![Screenshot of Cursor Settings menu on Mac: Cursor>Settings>Cursor Settings](图片链接占位符)
+![Screenshot of Cursor Settings menu on Mac: Cursor>Settings>Cursor Settings](https://prototyprio.gumlet.io/strapi/a13d8dfab6eebbdc961374b96caf165b.png?w=1536&q=75&format=avif&compress=true&dpr=1)
 
 Cursor Settings is a really useful section where you can also define your own AI rules, such as 'don't use typescript', and more:
 
-![Cursor Settings: Enable Cursor Composer](图片链接占位符)
+![Cursor Settings: Enable Cursor Composer](https://prototyprio.gumlet.io/strapi/41b0b026ba39b5293692188381e68208.png?w=1536&q=75&format=avif&compress=true&dpr=1)
 
 That handy 'Rules for AI' section is on the general tab:
 
@@ -42,7 +38,7 @@ With Composer activated, to open it, use the shortcut CMD+i or CMD+Shift+i. Here
 
 - **CMD+I**: Opens cursor in a floating window that you can resize and move around - this is handy when you're copy pasting commands into the terminal:
 
-![The floating Composer lets you move it around, resize it, and navigate between tabs for files that Composer has created.](图片链接占位符)
+![The floating Composer lets you move it around, resize it, and navigate between tabs for files that Composer has created.](https://prototyprio.gumlet.io/strapi/749dff2babc25e71362d11ba8bc98402.png?w=1536&q=75&format=avif&compress=true&dpr=1)
 
 See this bit at 3:42 of the YouTube vid
 
