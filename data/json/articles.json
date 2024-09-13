@@ -28,17 +28,17 @@
     "path": "data/md/gitbase-introduction.md"
   },
   {
-    "title": "Contributing to GitBase",
-    "description": "Hi, I'm Qiayue, creator of GitBase. I'm excited to welcome you to our project and look forward to your contributions in making GitBase even better!",
+    "title": "什么是 Cursor Composer？如何利用 AI 构建完整应用程序",
+    "description": "我发现了一个我还未充分利用的强大 Beta 功能：**Cursor Composer**。👀探索 Cursor Composer：提升代码编写的新利器",
     "date": "2024-08-16T03:57:46.153Z",
-    "lastModified": "2024-08-16T03:57:46Z",
+    "lastModified": "2024-09-13T07:25:13Z",
     "path": "data/md/how-to-contributing-to-gitbase.md"
   },
   {
-    "title": "Managing Articles in GitBase Admin Panel",
-    "description": "This guide will walk you through the process of viewing, editing, and creating new articles using the admin panel.",
+    "title": "What's Cursor Composer? How to Build Full Apps with AI",
+    "description": "Cursor Composer: A Powerful Beta Feature for Multi-File Editing",
     "date": "2024-08-11T13:16:44.231Z",
-    "lastModified": "2024-08-11T13:16:44Z",
+    "lastModified": "2024-09-13T06:44:18Z",
     "path": "data/md/managing-articles.md"
   }
 ]
