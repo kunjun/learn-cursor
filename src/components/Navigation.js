@@ -4,14 +4,17 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname, useRouter } from 'next/navigation'
-// import { Github } from 'lucide-react'
+import { Github } from 'lucide-react'
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 
 const navItems = [
-  { path: '/', label: 'Home' },
-  { path: '/all-tutorials', label: 'Video Tutorials' }, // 修改为视频全部列表页面
-  { path: '/posts', label: 'Articles' },
+  { path: '/getting-started', label: 'Next.js 入门', isButton: true },
+  { path: '/all-tutorials', label: '视频教程' },
+  { path: '/posts', label: '文章' },
+  { path: '/docs', label: '中文文档' },
+  { path: '/showcase', label: '网站实例' },
+  { path: 'https://nextjs.org/', label: '英文官网' },
 ]
 
 export function Navigation() {
@@ -55,59 +58,65 @@ export function Navigation() {
 
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background">
-      <div className="container flex h-16 items-center justify-between">
-        <div className="flex gap-6 md:gap-10">
-          <Link href="/" className="flex items-center space-x-2">
-            <Image
-              src="/logo.png"  // 请确保将您的 logo 文件放在 public 文件夹中
-              alt="Learn Cursor Logo"
-              width={32}
-              height={32}
-            />
-            <span className="inline-block font-bold">Learn Cursor</span>
+      <div className="container flex h-16 items-center justify-between px-4">
+        <div className="flex items-center justify-between w-full text-center text-neutral-900">
+          <Link href="/" className="flex h-14 text-sky-600 mr-8" id="a-1">
+            <figure className="cursor-pointer">
+              <div className="relative m-auto w-32 h-8" id="div-1">
+                <Image
+                  src="/logo.png"
+                  alt="Next.js Logo"
+                  layout="fill"
+                  objectFit="contain"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
+              </div>
+            </figure>
           </Link>
-          <nav className="flex gap-6">
+          <nav className="flex-1 flex items-center justify-center space-x-12">
             {navItems.map((item) => (
-              <Link
-                key={item.path}
-                href={item.path}
-                className={cn(
-                  "flex items-center text-sm font-medium text-muted-foreground",
-                  item.path === pathname && "text-foreground"
-                )}
-              >
-                {item.label}
-              </Link>
+              item.isButton ? (
+                <Link key={item.path} href={item.path}>
+                  <Button 
+                    className="bg-blue-600 text-white hover:bg-white hover:text-blue-600 border-2 border-blue-600 rounded-lg px-6 py-2 font-medium transition-colors duration-300"
+                  >
+                    {item.label}
+                  </Button>
+                </Link>
+              ) : (
+                <Link
+                  key={item.path}
+                  href={item.path}
+                  className={cn(
+                    "text-sm font-medium text-stone-500 hover:text-blue-600 transition-colors duration-300",
+                    item.path === pathname && "text-blue-600"
+                  )}
+                >
+                  {item.label}
+                </Link>
+              )
             ))}
           </nav>
-        </div>
-        {/* 注释掉最右侧的登录和 GitHub 入口
-        <div className="flex items-center gap-4">
-          <Link
-            href="https://github.com/qiayue/gitbase"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-foreground"
-          >
-            <Github className="h-5 w-5" />
-            <span className="sr-only">GitHub</span>
-          </Link>
-          {!isLoading && (
-            isLoggedIn ? (
+          <div className="flex items-center ml-8">
+            <Link
+              href="https://github.com/vercel/next.js"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-stone-500 hover:text-blue-600 transition-colors duration-300"
+            >
+              <Github className="h-6 w-6" />
+              <span className="sr-only">GitHub</span>
+            </Link>
+            {!isLoading && isLoggedIn && (
               <>
                 <Link href="/admin">
-                  <Button variant="ghost">Admin</Button>
+                  <Button variant="ghost" className="ml-4">管理</Button>
                 </Link>
-                <Button onClick={handleLogout} variant="outline">Logout</Button>
+                <Button onClick={handleLogout} variant="outline" className="ml-4">登出</Button>
               </>
-            ) : (
-              <Link href="/login">
-                <Button>Login</Button>
-              </Link>
-            )
-          )}
+            )}
+          </div>
         </div>
-        */}
       </div>
     </header>
   )

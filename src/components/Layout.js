@@ -1,13 +1,15 @@
-// components/Layout.js
 import { Navigation } from './Navigation'
-import { Footer } from '@/components/Footer'
 
 export function Layout({ children }) {
   return (
-    <div className="min-h-screen bg-background font-sans antialiased">
+    <div className="flex flex-col min-h-screen">
       <Navigation />
-      <main className="flex-1">{children}</main>
-      <Footer />
+      <main className="flex-grow">
+        {children}
+      </main>
+      <footer className="bg-gray-100 py-4 text-center">
+        {/* 添加页脚内容 */}
+      </footer>
     </div>
   )
 }
