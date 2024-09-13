@@ -18,11 +18,11 @@ export default function Home() {
     <div className="container mx-auto py-12 space-y-16">
       <section className="text-center space-y-4">
         <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl mb-4">
-          Master Cursor: AI-Powered IDE & Code Editor
+          Learn Cursor & Code Editor
         </h1>
-        <h2 className="text-2xl tracking-tighter sm:text-3xl md:text-3xl lg:text-3xl">Open Source Dynamic Website CMS Without Database</h2>
+        <h2 className="text-2xl tracking-tighter sm:text-3xl md:text-3xl lg:text-3xl">Learn Cursor Composer & Code Editor: Open-Source Dynamic Website CMS Tutorials</h2>
         <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl mb-6">
-          Elevate your coding with Cursor Composer. Discover comprehensive tutorials on AI-assisted programming, advanced IDE features, and efficient code editing techniques.
+        Learn Cursor offers tutorials for Cursor Composer, IDE, and AI code editor. Boost your coding skills with tips and video guides.
         </p>
       </section>
 

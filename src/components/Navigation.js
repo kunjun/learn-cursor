@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname, useRouter } from 'next/navigation'
 // import { Github } from 'lucide-react'
 import { cn } from "@/lib/utils"
@@ -57,6 +58,12 @@ export function Navigation() {
       <div className="container flex h-16 items-center justify-between">
         <div className="flex gap-6 md:gap-10">
           <Link href="/" className="flex items-center space-x-2">
+            <Image
+              src="/logo.png"  // 请确保将您的 logo 文件放在 public 文件夹中
+              alt="Learn Cursor Logo"
+              width={32}
+              height={32}
+            />
             <span className="inline-block font-bold">Learn Cursor</span>
           </Link>
           <nav className="flex gap-6">
