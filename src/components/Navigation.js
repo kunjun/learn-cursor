@@ -3,13 +3,13 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
-import { Github } from 'lucide-react'
+// import { Github } from 'lucide-react'
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 
 const navItems = [
   { path: '/', label: 'Home' },
-  { path: '/resources', label: 'Resources' },
+  { path: '/all-tutorials', label: 'Video Tutorials' }, // 修改为视频全部列表页面
   { path: '/posts', label: 'Articles' },
 ]
 
@@ -57,9 +57,9 @@ export function Navigation() {
       <div className="container flex h-16 items-center justify-between">
         <div className="flex gap-6 md:gap-10">
           <Link href="/" className="flex items-center space-x-2">
-            <span className="inline-block font-bold">GitBase</span>
+            <span className="inline-block font-bold">Learn Cursor</span>
           </Link>
-          <nav className="hidden md:flex gap-6">
+          <nav className="flex gap-6">
             {navItems.map((item) => (
               <Link
                 key={item.path}
@@ -74,6 +74,7 @@ export function Navigation() {
             ))}
           </nav>
         </div>
+        {/* 注释掉最右侧的登录和 GitHub 入口
         <div className="flex items-center gap-4">
           <Link
             href="https://github.com/qiayue/gitbase"
@@ -99,6 +100,7 @@ export function Navigation() {
             )
           )}
         </div>
+        */}
       </div>
     </header>
   )
