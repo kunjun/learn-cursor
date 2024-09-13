@@ -2,7 +2,7 @@
 title: 什么是 Cursor Composer？如何利用 AI 构建完整应用程序
 description: "我发现了一个我还未充分利用的强大 Beta 功能：**Cursor Composer**。\U0001F440探索 Cursor Composer：提升代码编写的新利器"
 date: '2024-08-16T03:57:46.153Z'
-lastModified: '2024-09-13T07:16:53.700Z'
+lastModified: '2024-09-13T07:23:58.612Z'
 ---
 # 探索 Cursor Composer：提升代码编写的新利器
 
@@ -16,23 +16,21 @@ Cursor Composer 能够在很大程度上为你编写完整的应用程序（在�
 
 只需提供指令，它就会开始工作。如果你已经从上方的图片猜到了，我使用 Composer 和 Claude AI 创建了一个 Duolingo 克隆应用作为演示。以下是整个过程的视频：
 
-[https://youtu.be/W4QmPwNwt8E]
+<iframe width="560" height="315" src="https://youtu.be/W4QmPwNwt8E" frameborder="0" allowfullscreen></iframe>
 
 ## 如何访问 Composer：Cursor 设置
 
 自 Cursor 0.40 版本起，Composer 已默认开启，但你也可以在 Cursor 设置中打开或关闭它。路径是：`Cursor > Settings > Cursor Settings`。
 
-![https://prototyprio.gumlet.io/strapi/a13d8dfab6eebbdc961374b96caf165b.png?w=1536&q=75&format=avif&compress=true&dpr=1] Mac 上的 Cursor 设置菜单截图：Cursor > Settings > Cursor Settings
+![Mac 上的 Cursor 设置菜单截图] (https://prototyprio.gumlet.io/strapi/a13d8dfab6eebbdc961374b96caf165b.png?w=1536&q=75&format=avif&compress=true&dpr=1"Cursor > Settings > Cursor Settings")
 
 Cursor 设置是一个非常有用的部分，你还可以在其中定义你自己的 AI 规则，例如"不要使用 TypeScript"等。
 
-![https://prototyprio.gumlet.io/strapi/41b0b026ba39b5293692188381e68208.png?w=1536&q=75&format=avif&compress=true&dpr=1]
-Cursor 设置：启用 Cursor Composer
+![Cursor 设置：启用 Cursor Composer] (https://prototyprio.gumlet.io/strapi/41b0b026ba39b5293692188381e68208.png?w=1536&q=75&format=avif&compress=true&dpr=1"Cursor 设置：启用 Cursor Composer")
 
 方便的"Rules for AI"部分位于 General 选项卡下：
 
-![https://prototyprio.gumlet.io/strapi/749dff2babc25e71362d11ba8bc98402.png?w=1536&q=75&format=avif&compress=true&dpr=1]
-Cursor 设置：AI 规则
+![Cursor 设置：AI 规则](https://prototyprio.gumlet.io/strapi/749dff2babc25e71362d11ba8bc98402.png?w=1536&q=75&format=avif&compress=true&dpr=1"Cursor 设置：AI 规则")
 
 ## Cursor 快捷键：CMD+I 和 CMD+SHIFT+I
 
