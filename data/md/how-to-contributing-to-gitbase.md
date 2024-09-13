@@ -2,7 +2,7 @@
 title: 什么是 Cursor Composer？如何利用 AI 构建完整应用程序
 description: "我发现了一个我还未充分利用的强大 Beta 功能：**Cursor Composer**。\U0001F440探索 Cursor Composer：提升代码编写的新利器"
 date: '2024-08-16T03:57:46.153Z'
-lastModified: '2024-09-13T07:23:58.612Z'
+lastModified: '2024-09-13T07:25:11.290Z'
 ---
 # 探索 Cursor Composer：提升代码编写的新利器
 
@@ -40,6 +40,7 @@ Cursor 设置是一个非常有用的部分，你还可以在其中定义你自�
 
 ![https://sfo2.digitaloceanspaces.com/prototypr-media/strapi/58a64e6bda376b4e80f082babd9f5578.mov]
 浮动的 Composer，便于移动、调整大小，并在 Composer 创建的文件标签间导航
+<iframe width="560" height="315" src="https://sfo2.digitaloceanspaces.com/prototypr-media/strapi/58a64e6bda376b4e80f082babd9f5578.mov" frameborder="0" allowfullscreen></iframe>
 
 在视频的 3:42 处可以看到这一部分。
 
@@ -47,6 +48,7 @@ Cursor 设置是一个非常有用的部分，你还可以在其中定义你自�
 
 !https://sfo2.digitaloceanspaces.com/prototypr-media/strapi/bafd60cb01c91e2e885f9eab65485a83.mp4
 [全屏的 Composer，包含三个面板]
+<iframe width="560" height="315" src="https://sfo2.digitaloceanspaces.com/prototypr-media/strapi/bafd60cb01c91e2e885f9eab65485a83.mp4" frameborder="0" allowfullscreen></iframe>
 
 这一部分可在视频的 2:52 处查看。
 
