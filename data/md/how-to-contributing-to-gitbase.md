@@ -1,101 +1,65 @@
 ---
-title: Contributing to GitBase
-description: >-
-  Hi, I'm Qiayue, creator of GitBase. I'm excited to welcome you to our project
-  and look forward to your contributions in making GitBase even better!
+title: 什么是 Cursor Composer？如何利用 AI 构建完整应用程序
+description: "我发现了一个我还未充分利用的强大 Beta 功能：**Cursor Composer**。\U0001F440探索 Cursor Composer：提升代码编写的新利器"
 date: '2024-08-16T03:57:46.153Z'
+lastModified: '2024-09-13T07:16:53.700Z'
 ---
-# Contributing to GitBase
+# 探索 Cursor Composer：提升代码编写的新利器
 
-Hello there! I'm Qiayue, the creator of GitBase. I'm thrilled that you're interested in contributing to our project. This guide is designed to help you understand how you can be a part of building and improving GitBase. Whether you're fixing bugs, adding new features, or improving documentation, your contributions are incredibly valuable and deeply appreciated. Let's work together to make GitBase even better!
+在过去的一段时间里，我一直使用 Cursor 来代替 VS Code，这极大地加速了我的开发过程。最近，我发现了一个我还未充分利用的强大 Beta 功能：**Cursor Composer**。👀
 
-First off, thank you for considering contributing to GitBase! It's people like you that make GitBase such a great tool.
+这个新版本引入了一个实验性的多文件编辑功能。要启用它，点击设置齿轮，进入 Beta 选项，激活 "Composer"。使用快捷键 `Cmd+I` 即可开始使用。
 
-## Code of Conduct
+## 什么是 Cursor Composer？
 
-By participating in this project, you are expected to uphold our Code of Conduct. Please report unacceptable behavior to [project_email@example.com].
+Cursor Composer 能够在很大程度上为你编写完整的应用程序（在合理范围内）。它将 Cursor 的 AI 代码辅助从只编辑单行代码和单个页面，提升到了同时编辑和创建多个页面。
 
-## How Can I Contribute?
+只需提供指令，它就会开始工作。如果你已经从上方的图片猜到了，我使用 Composer 和 Claude AI 创建了一个 Duolingo 克隆应用作为演示。以下是整个过程的视频：
 
-### Reporting Bugs
+[https://youtu.be/W4QmPwNwt8E]
 
-This section guides you through submitting a bug report for GitBase. Following these guidelines helps maintainers and the community understand your report, reproduce the behavior, and find related reports.
+## 如何访问 Composer：Cursor 设置
 
-**Before Submitting A Bug Report**
+自 Cursor 0.40 版本起，Composer 已默认开启，但你也可以在 Cursor 设置中打开或关闭它。路径是：`Cursor > Settings > Cursor Settings`。
 
-* Check the documentation for a list of common questions and problems.
-* Ensure the bug was not already reported by searching on GitHub under [Issues](https://github.com/yourusername/gitbase/issues).
+![https://prototyprio.gumlet.io/strapi/a13d8dfab6eebbdc961374b96caf165b.png?w=1536&q=75&format=avif&compress=true&dpr=1] Mac 上的 Cursor 设置菜单截图：Cursor > Settings > Cursor Settings
 
-**How Do I Submit A (Good) Bug Report?**
+Cursor 设置是一个非常有用的部分，你还可以在其中定义你自己的 AI 规则，例如"不要使用 TypeScript"等。
 
-Bugs are tracked as [GitHub issues](https://guides.github.com/features/issues/). Create an issue and provide the following information:
+![https://prototyprio.gumlet.io/strapi/41b0b026ba39b5293692188381e68208.png?w=1536&q=75&format=avif&compress=true&dpr=1]
+Cursor 设置：启用 Cursor Composer
 
-* Use a clear and descriptive title for the issue to identify the problem.
-* Describe the exact steps which reproduce the problem in as many details as possible.
-* Provide specific examples to demonstrate the steps.
+方便的"Rules for AI"部分位于 General 选项卡下：
 
-### Suggesting Enhancements
+![https://prototyprio.gumlet.io/strapi/749dff2babc25e71362d11ba8bc98402.png?w=1536&q=75&format=avif&compress=true&dpr=1]
+Cursor 设置：AI 规则
 
-This section guides you through submitting an enhancement suggestion for GitBase, including completely new features and minor improvements to existing functionality.
+## Cursor 快捷键：CMD+I 和 CMD+SHIFT+I
 
-**Before Submitting An Enhancement Suggestion**
+在激活 Composer 后，可以使用快捷键 `CMD+I` 或 `CMD+Shift+I` 打开它。它们的区别如下：
 
-* Check if the enhancement has already been suggested.
-* Determine which repository the enhancement should be suggested in.
+- **CMD+I**：以浮动窗口打开 Composer，你可以调整其大小和位置——这在你复制粘贴命令到终端时非常方便。
 
-**How Do I Submit A (Good) Enhancement Suggestion?**
+![https://sfo2.digitaloceanspaces.com/prototypr-media/strapi/58a64e6bda376b4e80f082babd9f5578.mov]
+浮动的 Composer，便于移动、调整大小，并在 Composer 创建的文件标签间导航
 
-Enhancement suggestions are tracked as [GitHub issues](https://guides.github.com/features/issues/). Create an issue and provide the following information:
+在视频的 3:42 处可以看到这一部分。
 
-* Use a clear and descriptive title for the issue to identify the suggestion.
-* Provide a step-by-step description of the suggested enhancement in as many details as possible.
-* Provide specific examples to demonstrate the steps.
+- **CMD+SHIFT+I**：全屏打开 Composer，包含三个面板：一个进度面板，允许你导航文件；中央的文件区域；右侧的聊天面板，用于添加更多提示。这让你能够更专注地了解正在发生的事情。
 
-### Your First Code Contribution
+!https://sfo2.digitaloceanspaces.com/prototypr-media/strapi/bafd60cb01c91e2e885f9eab65485a83.mp4
+[全屏的 Composer，包含三个面板]
 
-Unsure where to begin contributing to GitBase? You can start by looking through these `beginner` and `help-wanted` issues:
+这一部分可在视频的 2:52 处查看。
 
-* [Beginner issues](https://github.com/yourusername/gitbase/labels/beginner) - issues which should only require a few lines of code, and a test or two.
-* [Help wanted issues](https://github.com/yourusername/gitbase/labels/help%20wanted) - issues which should be a bit more involved than `beginner` issues.
+## 善用所有快捷键
 
-### Pull Requests
+总体来说，使用 Cursor 的 Composer 进行编码，真的减轻了我的负担。我过去不喜欢的很多代码工作是重复创建本质上是样板代码的无聊内容。
 
-The process described here has several goals:
+我仍然使用其他两个快捷键：`CMD+K`（内联提示）和 `CMD+L`（侧边栏聊天提示），以及 `CMD+I`。它们各有妙用。
 
-- Maintain GitBase's quality
-- Fix problems that are important to users
-- Engage the community in working toward the best possible GitBase
-- Enable a sustainable system for GitBase's maintainers to review contributions
+- **CMD + K**：内联提示示例：
 
-Please follow these steps to have your contribution considered by the maintainers:
+- **CMD + L**：侧边栏聊天示例
 
-1. Follow all instructions in [the template](PULL_REQUEST_TEMPLATE.md)
-2. Follow the [styleguides](#styleguides)
-3. After you submit your pull request, verify that all [status checks](https://help.github.com/articles/about-status-checks/) are passing
-
-## Styleguides
-
-### Git Commit Messages
-
-* Use the present tense ("Add feature" not "Added feature")
-* Use the imperative mood ("Move cursor to..." not "Moves cursor to...")
-* Limit the first line to 72 characters or less
-* Reference issues and pull requests liberally after the first line
-
-### JavaScript Styleguide
-
-All JavaScript must adhere to [JavaScript Standard Style](https://standardjs.com/).
-
-### Documentation Styleguide
-
-* Use [Markdown](https://daringfireball.net/projects/markdown/).
-
-## License
-
-By contributing, you agree that your contributions will be licensed under its MIT License.
-
-## Questions?
-
-Don't hesitate to contact the project maintainers if you have any questions or need further clarification on how to contribute.
-
-Thank you for your interest in contributing to GitBase! We look forward to your contributions and working together to make GitBase even better.
+通过结合使用这些工具，我的开发效率得到了显著提升。
