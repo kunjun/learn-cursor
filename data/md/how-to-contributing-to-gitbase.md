@@ -2,7 +2,7 @@
 title: 什么是 Cursor Composer？如何利用 AI 构建完整应用程序
 description: "我发现了一个我还未充分利用的强大 Beta 功能：**Cursor Composer**。\U0001F440探索 Cursor Composer：提升代码编写的新利器"
 date: '2024-08-16T03:57:46.153Z'
-lastModified: '2024-09-13T07:25:11.290Z'
+lastModified: '2024-09-13T07:25:13.654Z'
 ---
 # 探索 Cursor Composer：提升代码编写的新利器
 
