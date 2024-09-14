@@ -9,7 +9,8 @@ import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 
 const navItems = [
-  { path: '/getting-started', label: 'Next.js 入门', isButton: true },
+  // { path: '/getting-started', label: 'Next.js 入门', isButton: true }, // 暂时注释掉这一行
+  { path: '/', label: '首页' }, // 新增首页入口
   { path: '/all-tutorials', label: '视频教程' },
   { path: '/posts', label: '文章' },
   { path: '/docs', label: '中文文档' },
@@ -58,11 +59,11 @@ export function Navigation() {
 
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background">
-      <div className="container flex h-16 items-center justify-between px-4">
-        <div className="flex items-center justify-between w-full text-center text-neutral-900">
-          <Link href="/" className="flex h-14 text-sky-600 mr-8" id="a-1">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex h-16 items-center justify-between">
+          <Link href="/" className="flex h-14 text-sky-600 items-center" id="a-1">
             <figure className="cursor-pointer">
-              <div className="relative m-auto w-32 h-8" id="div-1">
+              <div className="relative w-40 h-10" id="div-1">
                 <Image
                   src="/logo.png"
                   alt="Next.js Logo"
@@ -73,31 +74,21 @@ export function Navigation() {
               </div>
             </figure>
           </Link>
-          <nav className="flex-1 flex items-center justify-center space-x-12">
+          <nav className="flex items-center space-x-8">
             {navItems.map((item) => (
-              item.isButton ? (
-                <Link key={item.path} href={item.path}>
-                  <Button 
-                    className="bg-blue-600 text-white hover:bg-white hover:text-blue-600 border-2 border-blue-600 rounded-lg px-6 py-2 font-medium transition-colors duration-300"
-                  >
-                    {item.label}
-                  </Button>
-                </Link>
-              ) : (
-                <Link
-                  key={item.path}
-                  href={item.path}
-                  className={cn(
-                    "text-sm font-medium text-stone-500 hover:text-blue-600 transition-colors duration-300",
-                    item.path === pathname && "text-blue-600"
-                  )}
-                >
-                  {item.label}
-                </Link>
-              )
+              <Link
+                key={item.path}
+                href={item.path}
+                className={cn(
+                  "text-sm font-medium text-stone-500 hover:text-blue-600 transition-colors duration-300",
+                  item.path === pathname && "text-blue-600"
+                )}
+              >
+                {item.label}
+              </Link>
             ))}
           </nav>
-          <div className="flex items-center ml-8">
+          <div className="flex items-center">
             <Link
               href="https://github.com/vercel/next.js"
               target="_blank"

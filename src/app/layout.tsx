@@ -2,7 +2,6 @@ import './globals.css'
 import { Inter } from 'next/font/google'
 import { Metadata } from 'next'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
-import Script from 'next/script'
 import { Layout } from '@/components/Layout'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -43,12 +42,11 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
-      <head>
-        {/* Google Analytics 脚本保持不变 */}
-      </head>
       <body className={inter.className}>
         <Layout>
-          {children}
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {children}
+          </div>
         </Layout>
         <GoogleAnalytics measurementId="G-25JE8RSPJN" />
       </body>
