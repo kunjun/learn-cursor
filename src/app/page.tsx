@@ -4,6 +4,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import VideoGrid from '@/components/VideoGrid'
 import { videos } from '@/data/videos';
+import { Navigation } from '@/components/Navigation';
 
 export const metadata: Metadata = {
   title: 'Learn Cursor - Tutorials for Cursor Composer, IDE, and AI Code Editor',
@@ -11,11 +12,14 @@ export const metadata: Metadata = {
 }
 
 export default function Home() {
-  const allPostsData = getSortedPostsData().slice(0, 6)
-  const limitedVideos = videos.slice(0, 6)
+  const allPostsData = getSortedPostsData().slice(0, 6);
+  const limitedVideos = videos.slice(0, 6);
 
   return (
     <div className="container mx-auto py-12 space-y-16">
+      {/* 删除下方的 <Navigation /> 组件 */}
+      {/* <Navigation /> */}
+      
       {/* 顶部内容 */}
       <div className="text-neutral-900 pb-12 pt-10 text-center min-[780px]:pt-16 min-[780px]:pr-0 min-[780px]:pb-0 min-[780px]:pl-0 lg:pt-28 lg:pr-0 lg:pb-8 lg:pl-0">
         <h1 className="text-[5.38rem] leading-none font-extrabold mb-8">
@@ -79,7 +83,7 @@ export default function Home() {
         <p className="text-sm mt-8">
           <strong className="font-bold">更多功能：</strong> 支持{" "}
           <a className="text-blue-600 hover:underline" href="#">版本控制</a>、{" "}
-          <a className="text-blue-600 hover:underline" href="#">调试工具</a>、{" "}
+          <a className="text-blue-600 hover:underline" href="#">调试��具</a>、{" "}
           <a className="text-blue-600 hover:underline" href="#">性能分析</a>、{" "}
           <a className="text-blue-600 hover:underline" href="#">自动化测试</a> 等等
         </p>
