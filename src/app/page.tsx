@@ -19,12 +19,12 @@ export default function Home() {
       
       {/* 顶部内容 */}
       <div className="text-neutral-900 pb-12 pt-10 text-center min-[780px]:pt-16 min-[780px]:pr-0 min-[780px]:pb-0 min-[780px]:pl-0 lg:pt-28 lg:pr-0 lg:pb-8 lg:pl-0">
-        <h1 className="text-[5.38rem] leading-none font-extrabold mb-8">
-          学习 Cursor <br className="hidden min-[500px]:block" /> AI 智能代码编辑器
+        <h1 className="text-4xl sm:text-5xl md:text-6xl leading-tight font-extrabold mb-8">
+          学习 Cursor <br className="hidden sm:block" /> AI 智能代码编辑器
         </h1>
-        <h3 className="text-stone-500 text-xl mb-10">
+        <h2 className="text-stone-500 text-xl mb-10">
           Learn Cursor 为您提供 Cursor Composer、IDE 和 AI 代码编辑器的全面教程。发现专家提示、视频指南和核心功能，提升您的编码技能。立即访问以掌握 Cursor 并提高您的编程效率。
-        </h3>
+        </h2>
         <div className="mb-8">
           <div className="inline-block p-3">
             <Link 
@@ -80,7 +80,7 @@ export default function Home() {
         <p className="text-sm mt-8">
           <strong className="font-bold">更多功能：</strong> 支持{" "}
           <a className="text-blue-600 hover:underline" href="#">版本控制</a>、{" "}
-          <a className="text-blue-600 hover:underline" href="#">调试��具</a>、{" "}
+          <a className="text-blue-600 hover:underline" href="#">调试具</a>、{" "}
           <a className="text-blue-600 hover:underline" href="#">性能分析</a>、{" "}
           <a className="text-blue-600 hover:underline" href="#">自动化测试</a> 等等
         </p>
