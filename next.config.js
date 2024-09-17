@@ -15,14 +15,18 @@ module.exports = withNextra({
     config.resolve.alias['@'] = path.resolve(__dirname, 'src')
     return config
   },
-  // 移除以下重定向配置以解决问题
-  // async redirects() {
-  //   return [
-  //     {
-  //       source: '/',
-  //       destination: '/docs',
-  //       permanent: true,
-  //     },
-  //   ]
-  // },
+  // 确保 API 路由可以正常工作
+  async rewrites() {
+    return [
+      {
+        source: '/docs/:path*',
+        destination: '/docs/:path*',
+      },
+    ]
+  },
+  async redirects() {
+    return [
+      // 如果有重定向规则，请确保它们不会影响 /api/login
+    ]
+  },
 })

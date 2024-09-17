@@ -4,13 +4,13 @@ import { verifyToken } from './src/lib/auth';
 export function middleware(request) {
   const path = request.nextUrl.pathname;
 
-  // Only check authentication for /admin routes
+  // 只检查 /admin 路由的认证
   if (path.startsWith('/admin')) {
     const token = request.cookies.get('auth_token')?.value;
     const isLoggedIn = token && verifyToken(token);
 
     if (!isLoggedIn) {
-      // Redirect to login page if not authenticated
+      // 未认证，重定向到登录页
       return NextResponse.redirect(new URL('/login', request.url));
     }
   }
@@ -19,7 +19,5 @@ export function middleware(request) {
 }
 
 export const config = {
-  matcher: [
-    '/admin/:path*',  // Match all paths starting with /admin
-  ],
+  matcher: ['/admin/:path*'],
 };

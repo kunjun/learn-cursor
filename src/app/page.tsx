@@ -1,5 +1,3 @@
-import { getSortedPostsData } from '@/lib/posts'
-import ArticleList from '@/components/ArticleList'
 import { Metadata } from 'next'
 import Link from 'next/link'
 import VideoGrid from '@/components/VideoGrid'
@@ -12,7 +10,6 @@ export const metadata: Metadata = {
 }
 
 export default function Home() {
-  const allPostsData = getSortedPostsData().slice(0, 6);
   const limitedVideos = videos.slice(0, 6);
 
   return (
@@ -110,11 +107,6 @@ export default function Home() {
           </Link>
         </div>
         <VideoGrid videos={limitedVideos} />
-      </div>
-
-      {/* 文章列表部分 */}
-      <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-        <ArticleList articles={allPostsData} />
       </div>
     </div>
   )

@@ -13,7 +13,7 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { path: 'https://learn-cursor.com', label: '首页' },
+  { path: '/', label: '首页' },
   { path: '/docs', label: '中文文档' },
   { path: '/all-tutorials', label: '视频教程' },
   { path: '/posts', label: '博客' },
