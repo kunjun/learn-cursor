@@ -5,8 +5,9 @@ import { videos } from '@/data/videos';
 import { Navigation } from '@/components/Navigation';
 
 export const metadata: Metadata = {
-  title: 'Learn Cursor - Tutorials for Cursor Composer, IDE, and AI Code Editor',
-  description: 'Learn Cursor offers comprehensive tutorials for Cursor Composer, a core feature of the Cursor IDE and AI code editor. Discover expert tips, video guides, and core features to enhance your coding skills. Visit now to master Cursor and boost your programming efficiency.',
+  title: 'Cursor教程 - Cursor Composer、IDE和AI代码编辑器的教程。大量文章和视频指南提升您的编码技能',
+  description:
+    '学习 Cursor 提供了 Cursor Composer 的全面教程，这是 Cursor IDE 和 AI 代码编辑器的核心功能。发现专家提示、视频指南和核心功能，提升您的编码技能。立即访问，掌握 Cursor，提升您的编程效率。',
 }
 
 export default function Home() {

@@ -1,3 +1,4 @@
+import { Metadata } from 'next'
 import fs from 'fs/promises'
 import path from 'path'
 import matter from 'gray-matter'
@@ -13,6 +14,7 @@ interface PostProps {
 interface Post {
   title: string
   date: string
+  excerpt: string
   content: string
 }
 
@@ -27,10 +29,29 @@ async function getPost(slug: string): Promise<Post | null> {
     return {
       title: data.title,
       date: data.date,
+      excerpt: data.excerpt,
       content,
     }
   } catch {
     return null
+  }
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string }
+}): Promise<Metadata> {
+  const post = await getPost(params.slug)
+  if (!post) {
+    return {
+      title: '文章未找到',
+      description: '抱歉，您访问的文章不存在。',
+    }
+  }
+  return {
+    title: `${post.title} - 您的网站名`,
+    description: post.excerpt,
   }
 }
 
