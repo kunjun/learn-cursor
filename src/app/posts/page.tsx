@@ -60,26 +60,31 @@ export default async function PostsPage({
 
   return (
     <div className="max-w-3xl mx-auto py-8">
-      <h1 className="text-3xl font-bold text-center mb-4">博客文章列表</h1>
+      <h1 className="text-3xl font-bold text-center mb-4">博客文章</h1>
       <p className="text-lg text-center mb-6">
-        欢迎阅读我的博客，这里分享技术文章和心得。
+      发现更多Cursor教程，技巧提示、视频指南和核心功能，提升您的编码技能。
       </p>
-      <ul className="space-y-6">
+      <div className="space-y-6">
         {visiblePosts.map((post) => (
-          <li key={post.slug}>
-            <Link
-              href={`/posts/${post.slug}`}
-              className="text-2xl font-semibold text-blue-600 hover:underline"
-            >
-              {post.title}
+          <div
+            key={post.slug}
+            className="flex flex-col border-2 border-zinc-200 rounded-lg p-4 gap-4 bg-white hover:shadow-md transition-shadow"
+          >
+            <Link href={`/posts/${post.slug}`}>
+              <h3 className="text-xl font-bold hover:underline">
+                {post.title}
+              </h3>
+              <p className="text-sm text-zinc-400 mt-2">{post.excerpt}</p>
             </Link>
-            <p className="text-sm text-gray-500">
-              {post.date} • {post.views} 次阅读
-            </p>
-            <p className="text-base text-gray-700">{post.excerpt}</p>
-          </li>
+            <div className="flex items-center gap-2 mt-2">
+              <div className="text-xs text-zinc-500">{post.date}</div>
+              <div className="text-xs text-zinc-500">
+                • {post.views} 次阅读
+              </div>
+            </div>
+          </div>
         ))}
-      </ul>
+      </div>
       {hasMore && (
         <div className="flex justify-center mt-6">
           <Link
