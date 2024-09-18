@@ -3,8 +3,8 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://www.learncursor.com
+Host: https://www.learn-cursor.com
 
 # Sitemaps
-Sitemap: https://www.learncursor.com/sitemap.xml
-Sitemap: https://www.learncursor.com/server-sitemap.xml
+Sitemap: https://www.learn-cursor.com/sitemap.xml
+Sitemap: https://www.learn-cursor.com/server-sitemap.xml
