@@ -5,7 +5,7 @@ excerpt: "Cursor Composer 提供自动化代码生成，提升开发效率，简
 views: 3298
 ---
 
-# Cursor Composer：彻底改变开发体验的工具
+## Cursor Composer：彻底改变开发体验的工具
 
 ![图片来源：https://statics.mylandingpages.co/static/aaanxdmf26c522mp/image/f19704ff94ab4d0197041a5f1b66c6da.webp](#)
 
