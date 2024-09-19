@@ -54,5 +54,13 @@ export const videos = [
       thumbnail: 'https://videos.cursorcasts.com/thumbnails/projects-thumbnail.jpg',
       url: 'https://videos.cursorcasts.com/videos/projects.mp4',
       category: '个人网站',
+    },
+    {
+      id: 'composer',
+      title: '手把手的AI编程cursor实战【小白教程】',
+      description: '手把手的AI编程cursor实战【小白教程】',
+      thumbnail: 'https://videos.cursorcasts.com/thumbnails/projects-thumbnail.jpg',
+      url: 'https://www.bilibili.com/video/BV1e3t4etExj?t=1.2',
+      category: 'B站',
     }
   ];

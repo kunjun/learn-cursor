@@ -41,8 +41,8 @@ export default function AllTutorials({ searchParams }: { searchParams: { categor
   // 定义可供选择的分类列表
   const categories: Category[] = ['全部', '个人网站', 'Yutube频道', 'B站', '其他'];
 
-  // 根据 URL 查询参数获取当前选中的分类
-  const selectedCategory = searchParams.category || '全';
+  // 获取 URL 查询参数中的分类，若未指定则默认为 '全部'
+  const selectedCategory = searchParams.category || '全部';
 
   // 根据选中的类过滤视频列表
   const filteredVideos =
