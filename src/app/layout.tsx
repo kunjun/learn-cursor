@@ -10,6 +10,9 @@ export const metadata = {
   title: 'Cursor教程 - Cursor Composer、IDE和AI代码编辑器的教程。大量文章和视频指南提升您的编码技能',
   description:
     '学习 Cursor 提供了 Cursor Composer 的全面教程，这是 Cursor IDE 和 AI 代码编辑器的核心功能。发现专家提示、视频指南和核心功能，提升您的编码技能。立即访问，掌握 Cursor，提升您的编程效率。',
+  alternates: {
+    canonical: 'https://www.learn-cursor.com', // 将此替换为您的实际域名
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
