@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-interface VideoItem {
+export interface VideoItem {
   id: string // 添加 id 字段
   title: string
   description: string
