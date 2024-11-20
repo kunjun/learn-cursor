@@ -18,6 +18,14 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="zh-CN">
+      <head>
+        <script 
+          async 
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6152848695010247"
+          crossOrigin="anonymous"
+        />
+        <meta name="google-adsense-account" content="ca-pub-6152848695010247" />
+      </head>
       <body className={inter.className}>
         <Navigation /> {/* 全局导航栏 */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
