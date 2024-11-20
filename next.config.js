@@ -11,6 +11,9 @@ const path = require('path')
 module.exports = withNextra({
   reactStrictMode: true,
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
+  images: {
+    domains: ['mintlify.s3-us-west-1.amazonaws.com'],
+  },
   webpack: (config) => {
     config.resolve.alias['@'] = path.resolve(__dirname, 'src')
     return config
@@ -29,4 +32,12 @@ module.exports = withNextra({
       // 如果有重定向规则，请确保它们不会影响 /api/login
     ]
   },
+  async generateMetadata() {
+    return {
+      metadataBase: new URL('https://www.learn-cursor.com'),
+      alternates: {
+        canonical: '/',
+      },
+    }
+  }
 })
