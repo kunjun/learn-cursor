@@ -39,5 +39,31 @@ module.exports = withNextra({
         canonical: '/',
       },
     }
+  },
+  i18n: {
+    locales: ['zh'],
+    defaultLocale: 'zh',
+  },
+  // 添加额外的头部标签
+  async headers() {
+    return [
+      {
+        source: '/:path*',
+        headers: [
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff'
+          },
+          {
+            key: 'X-Frame-Options',
+            value: 'DENY'
+          },
+          {
+            key: 'X-XSS-Protection',
+            value: '1; mode=block'
+          }
+        ]
+      }
+    ]
   }
 })
