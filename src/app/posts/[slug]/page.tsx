@@ -5,6 +5,7 @@ import matter from 'gray-matter'
 import { notFound } from 'next/navigation'
 import { marked } from 'marked'
 import Link from 'next/link'
+import { Breadcrumb } from '@/components/Breadcrumb'
 
 interface Post {
   title: string
@@ -90,6 +91,18 @@ export default async function PostPage({ params }: PostProps) {
 
   return (
     <div className="max-w-3xl mx-auto py-8">
+      <Breadcrumb 
+        items={[
+          {
+            label: '文章列表',
+            href: '/posts'
+          },
+          {
+            label: post.title
+          }
+        ]} 
+      />
+      
       <h1 className="text-3xl font-bold mb-4">{post.title}</h1>
       <p className="text-sm text-gray-500 mb-6">{post.date}</p>
       <article

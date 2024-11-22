@@ -1,8 +1,10 @@
 ---
-title: "解锁 Cursor Composer：在 AI 驱动的 IDE 中编写智能代码"
-date: "2024-09-08"
-excerpt: "随着人工智能的发展，编程方式正发生前所未有的变化。**Cursor Composer** 的出现，为开发者带来了全新的编程体验。"
-views: 3298
+title: "Cursor Composer 是什么：AI 驱动的智能开发工具"
+date: "2024-09-19"
+excerpt: "Cursor Composer 是一款革命性的 AI 驱动开发工具，它通过智能代码生成和自动化工作流程帮助开发者提升效率。本文深入介绍其核心功能，从基本概念到实际应用，帮助你全面了解这个强大的 AI 编程助手。"
+coverImage: "/images/posts/cursor-composer.jpg"
+category: "知识库精选"
+tags: ["Cursor", "AI开发", "效率工具", "编程技巧"]
 ---
 
 ## 解锁 Cursor Composer：在 AI 驱动的 IDE 中编写智能代码

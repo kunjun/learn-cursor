@@ -2,6 +2,9 @@
 title: "Cursor AI：如何精心设计提示和指令来构建全栈应用"
 date: "2024-09-08"
 excerpt: "现在任何人都能编程了吗？从仅通过一个提示就创建**全栈应用**，到无需开发者即可推出完整的后端，从推特上看，似乎使用 Cursor 可以实现任何可能的事情！或者，是这样吗？"
+coverImage: "/images/posts/cursor-ai-prompts.jpg"
+category: "知识库精选"
+tags: ["Cursor", "AI开发", "提示工程", "全栈开发", "效率工具"]
 views: 1098
 ---
 

@@ -1,8 +1,10 @@
 ---
 title: "探索 10 大 AI 编程工具：深入了解 Cursor Composer"
 date: "2024-09-18"
-excerpt: "近年来，随着人工智能技术的迅猛发展，AI 编程工具正在彻底改变开发者的工作方式。10 款 AI 编程工具，并重点探讨其中的 **Cursor Composer**，了解它如何在众多工具中脱颖而出，为开发者带来全新的编程体验。"
-views: 3298
+excerpt: "近年来，随着人工智能技术的迅猛发展，AI 编程工具正在彻底改变开发者的工作方式。本文深入介绍 10 款顶尖 AI 编程工具，并重点探讨 Cursor Composer 如何通过智能代码生成和自动化工作流程提升开发效率。"
+coverImage: "/images/posts/ai-ide-tools.jpg"
+category: "知识库精选"
+tags: ["AI开发", "开发工具", "Cursor", "效率工具", "编程技巧"]
 ---
 
 

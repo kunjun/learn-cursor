@@ -71,7 +71,12 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       fontFamily: {
-        sans: ['"Noto Sans SC"', 'PingFang SC', 'Microsoft YaHei', 'Helvetica Neue', 'Arial', 'sans-serif'],
+        sans: [
+          'PingFang SC',
+          'Microsoft YaHei',
+          'system-ui',
+          'sans-serif'
+        ],
       },
     },
   },

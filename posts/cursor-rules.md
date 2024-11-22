@@ -2,7 +2,9 @@
 title: "深入了解 Cursor 规则：自定义 AI 行为，实现个性化编码"
 date: "2024-09-08"
 excerpt: "通过设置 Cursor 规则，开发者可以微调 AI 助手的行为，实现更高效的个性化编码体验。"
-views: 2456
+coverImage: "/images/posts/cursor-composer.jpg"
+category: "知识库精选"
+tags: ["Cursor", "AI开发", "效率工具", "编程技巧"]
 ---
 
 # 深入了解 Cursor 规则：自定义 AI 行为，实现个性化编码

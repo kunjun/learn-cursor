@@ -1,8 +1,10 @@
 ---
 title: "如何开始使用 Cursor，一款智能的编程工具"
 date: "2024-09-08"
-excerpt: "本文为您介绍如何开始使用 Cursor，一款智能的编程工具，旨在提升开发效率和代码质量。以下是主要内容："
-views: 1298
+excerpt: "本文为您介绍如何开始使用 Cursor，一款智能的编程工具，旨在提升开发效率和代码质量。从安装配置到核心功能，全面了解这款革命性的 AI 编程助手。"
+coverImage: "/images/posts/cursor-guide.jpg"
+category: "工具教程"
+tags: ["Cursor", "AI编程", "开发工具", "效率提升", "编程教程"]
 ---
 
 ## 快速入门指南
