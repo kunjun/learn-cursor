@@ -90,12 +90,12 @@ export default function Home() {
       {/* 视频教程部分 */}
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16'>
         <div className="flex justify-between items-center mb-8">
-          <h2 className='text-3xl font-bold'>Cursor Video Tutorials</h2>
+          <h2 className='text-3xl font-bold'>Cursor视频教程</h2>
           <Link 
             href="/all-tutorials" 
             className="text-blue-600 hover:text-blue-800 font-semibold flex items-center group"
           >
-            More
+            查看更多
             <svg 
               xmlns="http://www.w3.org/2000/svg" 
               className="h-4 w-4 ml-1 transform transition-transform group-hover:translate-x-1" 
@@ -107,7 +107,12 @@ export default function Home() {
             </svg>
           </Link>
         </div>
-        <VideoGrid videos={limitedVideos} />
+        <VideoGrid videos={limitedVideos.map(video => ({
+          ...video,
+          platform: video.platform as "youtube" | "bilibili",
+          author: { name: '', avatar: '' }, // Default author
+          duration: '', // Default duration
+        }))} />
       </div>
     </div>
   )

@@ -1,66 +1,91 @@
 export const videos = [
     {
-      id: 'cursor-settings',
-      title: 'Cursor Settings',
-      description: 'Learn about the different settings in Cursor and what each of them do to get the best out of it, right from the get go.',
-      thumbnail: 'https://videos.cursorcasts.com/thumbnails/settings-thumbnail.jpg',
-      url: 'https://videos.cursorcasts.com/videos/settings.mp4',
-      category: '个人网站',
+      id: '1',
+      url: 'https://youtu.be/sKxUEnylsQg',
+      platform: 'youtube',
+      category: '基础教程'
     },
     {
-      id: 'cursor-tab',
-      title: 'Cursor Tab',
-      description: 'Learn how to use this awesome autocomplete feature across multiple lines, cursor predictions, fixing typos and more.',
-      thumbnail: 'https://videos.cursorcasts.com/thumbnails/tab-thumbnail.jpg',
-      url: 'https://videos.cursorcasts.com/videos/tab.mp4',
-      category: '个人网站',
+      id: '2',
+      url: 'https://youtu.be/gqUQbjsYZLQ',
+      platform: 'youtube',
+      category: '基础教程'
     },
     {
-      id: 'cursor-chat',
-      title: 'Cursor Chat',
-      description: 'Chat with an LLM right in the sidebar, with one click apply of code changes, or running terminal commands.',
-      thumbnail: 'https://videos.cursorcasts.com/thumbnails/chat-thumbnail.jpg',
-      url: 'https://videos.cursorcasts.com/videos/chat.mp4',
-      category: '个人网站',
+      id: '3',
+      url: 'https://youtu.be/1CC88QGQiEA',
+      platform: 'youtube',
+      category: '基础教程'
     },
     {
-      id: 'cmd-k',
-      title: 'Cmd+K',
-      description: 'You can use ⌘K to write new, or edit existing, code right in your file, or ask it to explain what the code means.',
-      thumbnail: 'https://videos.cursorcasts.com/thumbnails/cmdk-thumbnail.jpg',
-      url: 'https://videos.cursorcasts.com/videos/cmd+k.mp4',
-      category: '个人网站',
+      id: '4',
+      url: 'https://youtu.be/yk9lXobJ95E',
+      platform: 'youtube',
+      category: '功能演示'
     },
     {
-      id: 'cursor-composer',
-      title: 'Cursor Composer',
-      description: 'Composer is like magic. Create full features and make changes across multiple files all at the same time!',
-      thumbnail: 'https://videos.cursorcasts.com/thumbnails/composer-thumbnail.jpg',
-      url: 'https://videos.cursorcasts.com/videos/composer.mp4',
-      category: '个人网站',
+      id: '5',
+      url: 'https://youtu.be/V9_RzjqCXP8',
+      platform: 'youtube',
+      category: '功能演示'
     },
     {
-      id: 'prompt-files',
-      title: 'Prompt Files',
-      description: 'Using prompt files (or SOPs) you can give the LLM repeatable instructions to easily create new tools or features very quickly.',
-      thumbnail: 'https://videos.cursorcasts.com/thumbnails/prompt-files-thumbnail.jpg',
-      url: 'https://videos.cursorcasts.com/videos/prompt-files.mp4',
-      category: '个人网站',
+      id: '6',
+      url: 'https://youtu.be/fv1rkctrEPk',
+      platform: 'youtube',
+      category: '功能演示'
     },
     {
-      id: 'composer-projects',
-      title: 'Composer Projects',
-      description: 'Learn how to create projects to share SOPs and context between Cursor Composers and use them any time you need to work on a specific area of your app.',
-      thumbnail: 'https://videos.cursorcasts.com/thumbnails/projects-thumbnail.jpg',
-      url: 'https://videos.cursorcasts.com/videos/projects.mp4',
-      category: '个人网站',
+      id: '7',
+      url: 'https://youtu.be/u3wPImWBz7c',
+      platform: 'youtube',
+      category: '实战案例'
     },
     {
-      id: 'composer',
-      title: '手把手的AI编程cursor实战【小白教程】',
-      description: '手把手的AI编程cursor实战【小白教程】',
-      thumbnail: 'https://videos.cursorcasts.com/thumbnails/projects-thumbnail.jpg',
-      url: 'https://www.bilibili.com/video/BV1e3t4etExj?t=1.2',
-      category: 'B站',
+      id: '8',
+      url: 'https://youtu.be/tjFnifSEEjQ',
+      platform: 'youtube',
+      category: '实战案例'
+    },
+    {
+      id: '9',
+      url: 'https://youtu.be/42zmF9ARSWM',
+      platform: 'youtube',
+      category: '实战案例'
+    },
+    {
+      id: '10',
+      url: 'https://youtu.be/_SN7fqSNThg',
+      platform: 'youtube',
+      category: '进阶技巧'
+    },
+    {
+      id: '11',
+      url: 'https://youtu.be/nUTR11D8q08',
+      platform: 'youtube',
+      category: '进阶技巧'
+    },
+    {
+      id: '12',
+      url: 'https://youtu.be/oBDdcVaRhUk',
+      platform: 'youtube',
+      category: '进阶技巧'
+    },
+    {
+      id: 'bilibili-1',
+      url: 'https://www.bilibili.com/video/BV1e3t4etExj',
+      platform: 'bilibili',
+      category: 'B站教程'
     }
   ];
+
+export const categories = [
+  '全部',
+  '基础教程',
+  '功能演示',
+  '实战案例',
+  '进阶技巧',
+  'B站教程'
+] as const;
+
+export type Category = typeof categories[number];
