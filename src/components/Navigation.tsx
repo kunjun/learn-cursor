@@ -16,7 +16,7 @@ const navItems: NavItem[] = [
   { path: '/', label: '首页' },
   { path: '/docs', label: '中文文档' },
   { path: '/all-tutorials', label: '视频教程' },
-  { path: '/posts', label: '博客' },
+  { path: '/posts', label: '文章教程' },
   { path: 'https://www.cursor.com/', label: 'Cursor 网站' },
   { path: 'https://changelog.cursor.sh/', label: 'Cursor 历程', isExternal: true },
 ]
