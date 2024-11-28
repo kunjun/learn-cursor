@@ -5,17 +5,10 @@ import { useState, useEffect } from 'react'
 export interface VideoItem {
   id: string
   url: string
-  platform: 'youtube' | 'bilibili'
-  category: string
-}
-
-interface VideoMetadata {
   title: string
   description: string
-  author: {
-    name: string
-    avatar: string
-  }
+  platform: 'youtube' | 'bilibili'
+  category: string
 }
 
 // 提取视频ID的工具函数
@@ -24,115 +17,31 @@ function getVideoId(url: string, platform: string) {
     const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([^&?]+)/);
     return match ? match[1] : '';
   } else if (platform === 'bilibili') {
-    const match = url.match(/(?:bilibili\.com\/video\/)([^?/]+)/);
-    return match ? match[1] : '';
+    const bvMatch = url.match(/(?:bilibili\.com\/video\/)([A-Za-z0-9]+)/);
+    return bvMatch ? bvMatch[1] : '';
   }
   return '';
 }
 
-// 获取视频元数据的函数
-const fetchVideoMetadata = async (videoId: string, platform: string): Promise<VideoMetadata> => {
-  if (!videoId) {
-    throw new Error('Video ID is required');
-  }
-
-  try {
-    if (platform === 'youtube') {
-      // 检查是否有 API Key
-      if (!process.env.NEXT_PUBLIC_YOUTUBE_API_KEY) {
-        console.error('YouTube API Key is not configured');
-        throw new Error('YouTube API Key is missing');
-      }
-
-      const response = await fetch(
-        `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${videoId}&key=${process.env.NEXT_PUBLIC_YOUTUBE_API_KEY}`
-      );
-
-      if (!response.ok) {
-        throw new Error('Failed to fetch YouTube data');
-      }
-
-      const data = await response.json();
-      
-      if (!data.items?.[0]?.snippet) {
-        throw new Error('Invalid YouTube response');
-      }
-
-      const snippet = data.items[0].snippet;
-      return {
-        title: snippet.title,
-        description: snippet.description,
-        author: {
-          name: snippet.channelTitle,
-          avatar: snippet.thumbnails?.default?.url || '/default-avatar.png'
-        }
-      };
-    } else if (platform === 'bilibili') {
-      const response = await fetch(
-        `/api/bilibili?videoId=${videoId}` // 建议通过后端API代理请求
-      );
-
-      if (!response.ok) {
-        throw new Error('Failed to fetch Bilibili data');
-      }
-
-      const data = await response.json();
-      
-      if (!data.data) {
-        throw new Error('Invalid Bilibili response');
-      }
-
-      const info = data.data;
-      return {
-        title: info.title,
-        description: info.desc,
-        author: {
-          name: info.owner.name,
-          avatar: info.owner.face
-        }
-      };
-    }
-
-    throw new Error(`Unsupported platform: ${platform}`);
-  } catch (error) {
-    console.error('Error fetching video metadata:', error);
-    // 返回默认值
-    return {
-      title: 'Video Title',
-      description: 'Video Description',
-      author: {
-        name: 'Author',
-        avatar: '/default-avatar.png'
-      }
-    };
-  }
-};
-
 function VideoCard({ video }: { video: VideoItem }) {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [metadata, setMetadata] = useState<VideoMetadata | null>(null);
+  const [thumbnailUrl, setThumbnailUrl] = useState('');
   const videoId = getVideoId(video.url, video.platform);
 
   useEffect(() => {
-    let isMounted = true;
-
-    const loadMetadata = async () => {
-      try {
-        const data = await fetchVideoMetadata(videoId, video.platform);
-        if (isMounted) {
-          setMetadata(data);
-        }
-      } catch (err) {
-        console.error('Error loading video metadata:', err);
-      }
-    };
-
-    loadMetadata();
-
-    return () => {
-      isMounted = false;
-    };
-  }, [videoId, video.platform]);
+    if (video.platform === 'bilibili') {
+      fetch(`/api/bilibili/thumbnail?videoId=${videoId}`)
+        .then(res => res.json())
+        .then(data => {
+          if (data.pic) {
+            setThumbnailUrl(data.pic);
+          }
+        })
+        .catch(err => {
+          console.error('Error fetching bilibili thumbnail:', err);
+        });
+    }
+  }, [video.platform, videoId]);
 
   const renderVideoEmbed = () => {
     if (!isPlaying) return null;
@@ -143,10 +52,9 @@ function VideoCard({ video }: { video: VideoItem }) {
           <iframe
             className="absolute inset-0 w-full h-full rounded-lg"
             src={`https://www.youtube.com/embed/${videoId}`}
-            title={metadata?.title || 'Video'}
+            title={video.title}
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen
           />
         );
@@ -155,7 +63,7 @@ function VideoCard({ video }: { video: VideoItem }) {
           <iframe
             className="absolute inset-0 w-full h-full rounded-lg"
             src={`//player.bilibili.com/player.html?bvid=${videoId}&page=1&high_quality=1&danmaku=0`}
-            title={metadata?.title || 'Video'}
+            title={video.title}
             frameBorder="0"
             scrolling="no"
             allowFullScreen
@@ -167,65 +75,89 @@ function VideoCard({ video }: { video: VideoItem }) {
   };
 
   return (
-    <div className="bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300">
-      <div className="p-4">
-        {/* 视频预览/播放区域 */}
-        <div className="relative mb-4 aspect-video rounded-lg overflow-hidden group">
-          {!isPlaying ? (
-            <>
-              {/* 视频缩略图 */}
-              <img 
-                className="object-cover w-full h-full rounded-lg transform group-hover:scale-105 transition-transform duration-300" 
-                src={`https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`}
-                alt={metadata?.title || 'Video thumbnail'} 
-              />
-              {/* 播放按钮 */}
+    <div className="group cursor-pointer">
+      <div className="relative aspect-video rounded-lg overflow-hidden mb-4 bg-gray-100">
+        {!isPlaying ? (
+          <>
+            <img 
+              className="object-cover w-full h-full rounded-lg transform group-hover:scale-105 transition-all duration-500 ease-out" 
+              src={video.platform === 'youtube' 
+                ? `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`
+                : thumbnailUrl || '/placeholder-thumbnail.jpg'}
+              alt={video.title} 
+            />
+            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all duration-300 ease-out" />
+            <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-0 flex items-center justify-center opacity-90 group-hover:opacity-100 transition-opacity duration-300">
               <button
                 onClick={() => setIsPlaying(true)}
-                className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-20 hover:bg-opacity-30 transition-all duration-300"
+                className="transform group-hover:scale-110 transition-all duration-500 ease-out"
                 aria-label="播放视频"
               >
-                <div className="bg-red-600 rounded-full p-4 transform hover:scale-110 transition-transform duration-300 shadow-lg">
-                  <svg className="w-8 h-8" fill="white" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z"/>
-                  </svg>
+                <div className="relative w-24 h-24 flex items-center justify-center">
+                  {/* 最外层光晕 */}
+                  <div className="absolute inset-0 bg-white/10 rounded-full blur-xl transform scale-110 group-hover:scale-125 transition-all duration-500" />
+                  
+                  {/* 中间光晕 */}
+                  <div className="absolute inset-2 bg-white/15 rounded-full blur-lg transform scale-105 group-hover:scale-120 transition-all duration-500" />
+                  
+                  {/* 主按钮容器 */}
+                  <div className="relative w-16 h-16">
+                    {/* 按钮背景 */}
+                    <div className="absolute inset-0 bg-black/30 backdrop-blur-sm rounded-full shadow-[0_0_15px_rgba(0,0,0,0.2)] transform group-hover:scale-105 transition-all duration-300" />
+                    
+                    {/* 内部渐变边框 */}
+                    <div className="absolute inset-[2px] rounded-full bg-gradient-to-br from-white/30 to-white/10" />
+                    
+                    {/* 内部阴影效果 */}
+                    <div className="absolute inset-[2px] rounded-full shadow-inner" />
+                    
+                    {/* 播放图标容器 */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      {/* 播放图标 */}
+                      <svg 
+                        className="w-7 h-7 text-white drop-shadow-lg transform translate-x-0.5 group-hover:scale-110 transition-transform duration-300" 
+                        viewBox="0 0 24 24" 
+                        fill="currentColor"
+                      >
+                        <path d="M8 5.14v14l11-7-11-7z" />
+                      </svg>
+                    </div>
+                    
+                    {/* 悬停时的光晕动画 */}
+                    <div className="absolute -inset-4 bg-white/5 rounded-full opacity-0 group-hover:opacity-100 blur-xl transition-all duration-500 animate-pulse" />
+                  </div>
                 </div>
               </button>
-            </>
-          ) : (
-            renderVideoEmbed()
-          )}
-        </div>
-
-        {/* 视频信息区域 */}
-        {metadata && (
-          <div className="flex space-x-3 p-2">
-            <img 
-              className="w-10 h-10 rounded-full flex-shrink-0"
-              src={metadata.author.avatar} 
-              alt={metadata.author.name} 
-            />
-            <div className="flex-1 min-w-0">
-              <h3 className="text-zinc-950 font-semibold text-lg mb-1 line-clamp-2 break-words">
-                {metadata.title}
-              </h3>
-              <div className="flex items-center text-sm text-zinc-500 mb-1">
-                <span className="truncate">{metadata.author.name}</span>
-              </div>
-              <p className="text-zinc-500 text-sm mt-2 line-clamp-2 break-words">
-                {metadata.description}
-              </p>
             </div>
-          </div>
+            <div className="absolute bottom-3 right-3 px-2.5 py-1.5 bg-white/90 backdrop-blur-sm rounded-md text-sm font-medium text-gray-800 shadow-sm transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 ease-out">
+              {video.platform === 'youtube' ? 'YouTube' : 'Bilibili'}
+            </div>
+          </>
+        ) : (
+          renderVideoEmbed()
         )}
+      </div>
+
+      <div className="space-y-2 transform group-hover:translate-x-1 transition-transform duration-300 ease-out">
+        <h3 className="text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors duration-300 line-clamp-2">
+          {video.title}
+        </h3>
+        <p className="text-gray-600 text-sm line-clamp-2">
+          {video.description}
+        </p>
       </div>
     </div>
   );
 }
 
-export default function VideoGrid({ videos }: { videos: VideoItem[] }) {
+interface VideoGridProps {
+  videos: VideoItem[]
+}
+
+export default function VideoGrid({ videos }: VideoGridProps) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {videos.map((video) => (
         <VideoCard key={video.id} video={video} />
       ))}

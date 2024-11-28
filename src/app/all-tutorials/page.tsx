@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import VideoGrid from '@/components/VideoGrid';
-import { videos, categories, type Category } from '@/data/videos';
+import { videos, categories, type Category, type Video } from '@/data/videos';
 
 export const metadata: Metadata = {
   title: '所有 Cursor 教程 - 学习 Cursor Composer 和 AI 代码编辑器',
@@ -16,7 +16,7 @@ export default function AllTutorials({
   const selectedCategory = searchParams.category || '全部';
 
   // 根据选中的分类过滤视频
-  const filteredVideos =
+  const filteredVideos: Video[] =
     selectedCategory === '全部'
       ? videos
       : videos.filter((video) => video.category === selectedCategory);
@@ -48,11 +48,9 @@ export default function AllTutorials({
             ))}
           </ul>
         </div>
+
         {/* 视频网格 */}
-        <VideoGrid videos={filteredVideos.map(video => ({
-          ...video,
-          platform: video.platform as "youtube" | "bilibili" // Type assertion to fix type error
-        }))} />
+        <VideoGrid videos={filteredVideos} />
       </div>
     </div>
   );

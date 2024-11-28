@@ -2,24 +2,33 @@ import { NextResponse } from 'next/server';
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
-  const bvid = searchParams.get('bvid');
+  const videoId = searchParams.get('videoId');
 
-  if (!bvid) {
-    return NextResponse.json({ error: 'BVID is required' }, { status: 400 });
+  if (!videoId) {
+    return NextResponse.json({ error: 'Video ID is required' }, { status: 400 });
   }
 
   try {
     const response = await fetch(
-      `https://api.bilibili.com/x/web-interface/view?bvid=${bvid}`
+      `https://api.bilibili.com/x/web-interface/view?bvid=${videoId}`
     );
+
+    if (!response.ok) {
+      throw new Error('Failed to fetch from Bilibili API');
+    }
+
     const data = await response.json();
     
-    if (data.data?.pic) {
-      return NextResponse.json({ thumbnailUrl: data.data.pic });
+    if (data.code !== 0) {
+      throw new Error('Bilibili API error');
     }
-    
-    return NextResponse.json({ error: 'Thumbnail not found' }, { status: 404 });
+
+    return NextResponse.json({ pic: data.data.pic });
   } catch (error) {
-    return NextResponse.json({ error: 'Failed to fetch thumbnail' }, { status: 500 });
+    console.error('Error fetching Bilibili thumbnail:', error);
+    return NextResponse.json(
+      { error: 'Failed to fetch thumbnail' },
+      { status: 500 }
+    );
   }
 } 
