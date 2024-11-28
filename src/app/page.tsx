@@ -34,6 +34,10 @@ const faqItems = [
   {
     question: "Cursor 教程是免费的吗？",
     answer: "我们提供大量免费教程资源，覆盖 Cursor 使用的各个层面。部分进阶内容可能需要付费，但基础学习资源完全免费，助力你快速入门 AI 编程。"
+  },
+  {
+    question: "Cursor Composer是什么？",
+    answer: "Cursor Composer 是 Cursor AI 编辑器的核心功能，它允许开发者通过自然语言指令快速生成、重构和优化代码。Composer 能够理解上下文，根据您的需求智能地生成代码片段、函数和整个模块，大大提高编码效率和代码质量。"
   }
 ];
 
