@@ -17,7 +17,7 @@ const navItems: NavItem[] = [
   { path: '/docs', label: '中文文档' },
   { path: '/all-tutorials', label: '视频教程' },
   { path: '/posts', label: '文章教程' },
-  { path: 'https://www.cursor.com/', label: 'Cursor 网站' },
+  { path: 'https://nf.video/Up9Xa', label: ' ChatGPT 合租', isExternal: true },
   { path: 'https://changelog.cursor.sh/', label: 'Cursor 历程', isExternal: true },
 ]
 
@@ -79,7 +79,7 @@ export function Navigation() {
           </nav>
           <div className="flex items-center">
             <Link
-              href="https://github.com/getcursor/cursor?tab=readme-ov-file"
+              href="https://github.com/geektao1024/learn-cursors-3.0"
               target="_blank"
               rel="noopener noreferrer"
               className="text-stone-500 hover:text-blue-600 transition duration-300"
