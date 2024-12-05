@@ -5,7 +5,7 @@ import matter from 'gray-matter'
 import { notFound } from 'next/navigation'
 import { marked } from 'marked'
 import Link from 'next/link'
-import { Breadcrumb } from '@/components/Breadcrumb'
+import Breadcrumb from '@/components/Breadcrumb'
 
 interface Post {
   title: string
@@ -98,7 +98,8 @@ export default async function PostPage({ params }: PostProps) {
             href: '/posts'
           },
           {
-            label: post.title
+            label: post.title,
+            href: `/posts/${params.slug}`
           }
         ]} 
       />

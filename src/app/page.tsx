@@ -17,7 +17,7 @@ const faqItems = [
   },
   {
     question: "Cursor AI 教程适合零基础学习者吗？",
-    answer: "非常适合！我们的教程专为不同技术水平的学习者设计。从基础入门到高级技巧，提供系统性的 Cursor AI 使用指南，帮助你快速掌握 AI 编程工具。"
+    answer: "非常适合！我们的教程专为不同技术水平的学习者设计。从基础入门到高技巧，提供系统性的 Cursor AI 使用指南，帮助你快速掌握 AI 编程工具。"
   },
   {
     question: "Cursor AI 教程包含哪些内容？",
@@ -37,7 +37,7 @@ const faqItems = [
   },
   {
     question: "Cursor Composer是什么？",
-    answer: "Cursor Composer 是 Cursor AI 编辑器的核心功能，它允许开发者通过自然语言指令快速生成、重构和优化代码。Composer 能够理解上下文，根据您的需求智能地生成代码片段、函数和整个模块，大大提高编码效率和代码质量。"
+    answer: "Cursor Composer 是 Cursor AI 编辑器的核心功能，它允许开发者通过自然语言指令快速生成、重构和优化代码Composer 能够理解上下文，根据您的需求智能地生成代码片段、函数和整个模块，大大提高编码效率和代码质量。"
   }
 ];
 
@@ -100,14 +100,14 @@ export default function Home() {
                 link: "/posts"
               },
               {
-                title: "Cursor 启动模板",
-                desc: "各种框架的快速启动模板",
+                title: "Cursor 快捷键",
+                desc: "提升效率的键盘快捷键速查表",
                 icon: (
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8 text-green-600">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091.957-.131 1.923-.904 2.641l-.92.766m-4.9-1.414l-4.655 5.653" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 013.75 9.375v-4.5zM3.75 14.625c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5a1.125 1.125 0 01-1.125-1.125v-4.5zM13.5 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 0113.5 9.375v-4.5z" />
                   </svg>
                 ),
-                link: "/docs"
+                link: "/shortcuts"
               },
               {
                 title: "Cursor 核心功能",
@@ -127,7 +127,7 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" />
                   </svg>
                 ),
-                link: "/rules"
+                link: "/cursor-rules"
               },
               {
                 title: "视频教程",

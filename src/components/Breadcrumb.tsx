@@ -1,39 +1,36 @@
 'use client'
 
 import Link from 'next/link'
-import { ChevronRightIcon, HomeIcon } from '@heroicons/react/24/outline'
+import { ChevronRightIcon, HomeIcon } from '@heroicons/react/20/solid'
 
-interface BreadcrumbProps {
-  items: {
-    label: string
-    href?: string
-  }[]
+interface BreadcrumbItem {
+  label: string
+  href: string
 }
 
-export function Breadcrumb({ items }: BreadcrumbProps) {
+interface BreadcrumbProps {
+  items: BreadcrumbItem[]
+}
+
+export default function Breadcrumb({ items }: BreadcrumbProps) {
   return (
-    <nav className="flex items-center space-x-2 text-sm text-gray-600 mb-6">
-      <Link 
-        href="/" 
-        className="flex items-center hover:text-blue-600 transition-colors"
-      >
-        <HomeIcon className="w-4 h-4 mr-1" />
-        首页
+    <nav className="flex items-center space-x-2 py-4 px-4 bg-white">
+      <Link href="/" className="text-gray-600 hover:text-blue-600">
+        <HomeIcon className="h-5 w-5" />
       </Link>
-      
       {items.map((item, index) => (
         <div key={index} className="flex items-center">
-          <ChevronRightIcon className="w-4 h-4 mx-1" />
-          {item.href ? (
-            <Link 
-              href={item.href}
-              className="hover:text-blue-600 transition-colors"
-            >
-              {item.label}
-            </Link>
-          ) : (
-            <span className="text-gray-400">{item.label}</span>
-          )}
+          <ChevronRightIcon className="h-5 w-5 text-gray-400" />
+          <Link
+            href={item.href}
+            className={`ml-2 text-sm font-medium ${
+              index === items.length - 1
+                ? 'text-gray-900'
+                : 'text-gray-600 hover:text-blue-600'
+            }`}
+          >
+            {item.label}
+          </Link>
         </div>
       ))}
     </nav>
