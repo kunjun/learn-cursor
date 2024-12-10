@@ -2,9 +2,5 @@
 User-agent: *
 Allow: /
 
-# Host
-Host: https://www.learn-cursor.com
-
-# Sitemaps
+# 指定首选域名
 Sitemap: https://www.learn-cursor.com/sitemap.xml
-Sitemap: https://www.learn-cursor.com/server-sitemap.xml

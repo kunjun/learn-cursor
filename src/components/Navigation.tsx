@@ -14,6 +14,7 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   { path: '/', label: '首页' },
+  { path: '/tutorials', label: '从零开始AI编程' },
   { path: '/docs', label: '中文文档' },
   { path: '/all-tutorials', label: '视频教程' },
   { path: '/posts', label: '文章教程' },

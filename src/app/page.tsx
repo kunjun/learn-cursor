@@ -3,11 +3,36 @@ import Link from 'next/link'
 import VideoGrid from '@/components/VideoGrid'
 import { videos } from '@/data/videos'
 import FAQSection from '../components/FAQSection'
+import { HomeJsonLd } from '@/components/HomeJsonLd'
 
 export const metadata: Metadata = {
   title: 'Cursor教程 - Cursor Composer、IDE和AI代码编辑器的教程。大量文章和视频指南提升您的编码技能',
-  description:
-    '学习 Cursor 提供了 Cursor Composer 的全面教程，这是 Cursor IDE 和 AI 代码编辑器的核心功能。发现专家提示、视频指南和核心功能，提升您的编码技能。立即访问，掌握 Cursor，提升您的编程效率。',
+  description: '学习 Cursor 提供了 Cursor Composer 的全面教程，这是 Cursor IDE 和 AI 代码编辑器的核心功能。发现专家提示、视频指南和核心功能，提升您的编码技能。立即访问，掌握 Cursor，提升您的编程效率。',
+  keywords: ['Cursor', 'AI编程', 'IDE', 'Cursor教程', 'AI代码编辑器', 'Cursor Composer', '编程学习'],
+  openGraph: {
+    title: 'Cursor教程 - AI编程学习平台',
+    description: '学习 Cursor 提供了 Cursor Composer 的全面教程，这是 Cursor IDE 和 AI 代码编辑器的核心功能。',
+    type: 'website',
+    url: 'https://learn-cursor.com',
+    siteName: 'Learn Cursor',
+    images: [
+      {
+        url: '/logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'Learn Cursor Logo'
+      }
+    ]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Cursor教程 - AI编程学习平台',
+    description: '学习 Cursor 提供了 Cursor Composer 的全面教程，这是 Cursor IDE 和 AI 代码编辑器的核心功能。',
+    images: ['/logo.png']
+  },
+  alternates: {
+    canonical: 'https://learn-cursor.com'
+  }
 }
 
 const faqItems = [
@@ -43,51 +68,58 @@ const faqItems = [
 
 export default function Home() {
   const limitedVideos = videos.slice(0, 6);
+  const websiteUrl = 'https://learn-cursor.com';
 
   return (
-    <div className="container mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
-      {/* 顶部内容 - 减少垂直内边距 */}
-      <div className="py-10 md:py-16 space-y-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-block bg-blue-50 rounded-full px-4 py-2 mb-6 text-blue-800 text-sm font-medium tracking-wide">
-            🚀 全新 Cursor AI 学习平台
+    <>
+      <HomeJsonLd
+        title="Cursor教程 - AI编程学习平台"
+        description="学习 Cursor 提供了 Cursor Composer 的全面教程，这是 Cursor IDE 和 AI 代码编辑器的核心功能。"
+        url={websiteUrl}
+      />
+      
+      <main className="container mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+        {/* 顶部内容 - 减少垂直内边距 */}
+        <section className="py-10 md:py-16 space-y-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="inline-block bg-blue-50 rounded-full px-4 py-2 mb-6 text-blue-800 text-sm font-medium tracking-wide">
+              🚀 全新 Cursor AI 学习平台
+            </div>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl leading-tight font-extrabold mb-6 text-gray-900 tracking-tight">
+              学习 Cursor <br className="hidden sm:block" /> AI 智能代码编辑器
+            </h1>
+            <h2 className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-10 max-w-3xl mx-auto leading-relaxed">
+              Learn Cursor 为您提供 Cursor Composer、IDE 和 AI 代码编辑器的全面教程。发现专家提示、视频指南和核心功能，提升您的编码技能。
+            </h2>
+            <div className="flex justify-center space-x-4">
+              <Link 
+                className="bg-blue-600 hover:bg-blue-700 text-white font-semibold items-center justify-center px-8 md:px-14 inline-flex h-12 rounded-xl transition duration-300 ease-in-out transform hover:scale-105 shadow-lg hover:shadow-xl"
+                href="/tutorials"
+              >
+                开始学习
+              </Link>
+              <Link 
+                className="text-gray-700 bg-white hover:bg-gray-50 items-center justify-center px-8 md:px-14 inline-flex h-12 rounded-xl border border-gray-200 transition duration-300 ease-in-out shadow-md hover:shadow-lg"
+                href="/docs"
+              >
+                中文文档
+              </Link>
+            </div>
           </div>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl leading-tight font-extrabold mb-6 text-gray-900 tracking-tight">
-            学习 Cursor <br className="hidden sm:block" /> AI 智能代码编辑器
-          </h1>
-          <h2 className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-10 max-w-3xl mx-auto leading-relaxed">
-            Learn Cursor 为您提供 Cursor Composer、IDE 和 AI 代码编辑器的全面教程。发现专家提示、视频指南和核心功能，提升您的编码技能。
-          </h2>
-          <div className="flex justify-center space-x-4">
-            <Link 
-              className="bg-blue-600 hover:bg-blue-700 text-white font-semibold items-center justify-center px-8 md:px-14 inline-flex h-12 rounded-xl transition duration-300 ease-in-out transform hover:scale-105 shadow-lg hover:shadow-xl"
-              href="/all-tutorials"
-            >
-              开始学习
-            </Link>
-            <Link 
-              className="text-gray-700 bg-white hover:bg-gray-50 items-center justify-center px-8 md:px-14 inline-flex h-12 rounded-xl border border-gray-200 transition duration-300 ease-in-out shadow-md hover:shadow-lg"
-              href="/docs"
-            >
-              中文文档
-            </Link>
-          </div>
-        </div>
-      </div>
+        </section>
 
-      {/* 分隔线 */}
-      <div className="border-t border-gray-200 my-4"></div>
+        <hr className="border-t border-gray-200 my-4" />
 
-      {/* Cursor 教程部分 - 减少垂直内边距 */}
-      <div className="py-10 md:py-16 space-y-8">
-        <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-gray-900 tracking-tight">Cursor AI 教程</h1>
+        {/* Cursor 教程部分 */}
+        <section className="py-10 md:py-16 space-y-8">
+          <div className="text-center max-w-4xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-gray-900 tracking-tight">Cursor AI 教程</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            为开发者和产品经理提供全面、实用的 Cursor AI 学习资源
+              为开发者和产品经理提供全面、实用的 Cursor AI 学习资源
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <nav className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
                 title: "Cursor 教程",
@@ -153,11 +185,12 @@ export default function Home() {
               <Link 
                 key={index}
                 href={item.link}
-              className="group block p-6 bg-white rounded-xl border border-gray-200 hover:border-blue-300 transition-all duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-xl"
+                className="group block p-6 bg-white rounded-xl border border-gray-200 hover:border-blue-300 transition-all duration-300 ease-in-out transform hover:-translate-y-2 hover:shadow-xl"
+                aria-label={`访问${item.title}`}
               >
                 <div className="flex flex-col h-full">
                   <div className="flex items-center space-x-4 mb-4">
-                  <div className="bg-blue-50 rounded-full p-3 shadow-sm">
+                    <div className="bg-blue-50 rounded-full p-3 shadow-sm">
                       {item.icon}
                     </div>
                     <div>
@@ -173,6 +206,7 @@ export default function Home() {
                         xmlns="http://www.w3.org/2000/svg" 
                         viewBox="0 0 20 20" 
                         fill="currentColor"
+                        aria-hidden="true"
                       >
                         <path 
                           fillRule="evenodd" 
@@ -185,56 +219,57 @@ export default function Home() {
                 </div>
               </Link>
             ))}
-          </div>
-        </div>
+          </nav>
+        </section>
 
-      {/* 分隔线 */}
-      <div className="border-t border-gray-200 my-4"></div>
+        <hr className="border-t border-gray-200 my-4" />
 
-      {/* 视频教程部分 - 减少垂直内边距 */}
-      <div className="py-10 md:py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12 md:mb-16">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-gray-900 tracking-tight">Cursor 视频教程</h1>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              精选高质量的 Cursor 使用教程和实战案例，帮助您快速掌握 AI 编程技巧
-            </p>
-          </div>
-          
-          <VideoGrid videos={limitedVideos.map(video => ({
-            ...video,
-            platform: video.platform as "youtube" | "bilibili",
-            author: { name: '', avatar: '' },
-            duration: '',
-          }))} />
-          
-          <div className="text-center mt-12">
-            <Link 
-              href="/all-tutorials" 
-              className="text-blue-600 hover:text-blue-700 font-semibold inline-flex items-center justify-center group"
-            >
-              查看更多视频教程
-              <svg 
-                xmlns="http://www.w3.org/2000/svg" 
-                className="h-5 w-5 ml-2 transform transition-transform group-hover:translate-x-1" 
-                fill="none" 
-                viewBox="0 0 24 24" 
-                stroke="currentColor"
+        {/* 视频教程部分 */}
+        <section className="py-10 md:py-16 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-12 md:mb-16">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-gray-900 tracking-tight">Cursor 视频教程</h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                精选高质量的 Cursor 使用教程和实战案例，帮助您快速掌握 AI 编程技巧
+              </p>
+            </div>
+            
+            <VideoGrid videos={limitedVideos.map(video => ({
+              ...video,
+              platform: video.platform as "youtube" | "bilibili",
+              author: { name: '', avatar: '' },
+              duration: '',
+            }))} />
+            
+            <div className="text-center mt-12">
+              <Link 
+                href="/all-tutorials" 
+                className="text-blue-600 hover:text-blue-700 font-semibold inline-flex items-center justify-center group"
+                aria-label="查看更多视频教程"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </Link>
+                查看更多视频教程
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  className="h-5 w-5 ml-2 transform transition-transform group-hover:translate-x-1" 
+                  fill="none" 
+                  viewBox="0 0 24 24" 
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+            </div>
           </div>
-        </div>
-      </div>
+        </section>
 
-      {/* 分隔线 */}
-      <div className="border-t border-gray-100 my-4"></div>
+        <hr className="border-t border-gray-100 my-4" />
 
-      {/* FAQ部分 */}
-      <div className="py-2">
-        <FAQSection items={faqItems} />
-      </div>
-    </div>
+        {/* FAQ部分 */}
+        <section className="py-2">
+          <FAQSection items={faqItems} />
+        </section>
+      </main>
+    </>
   )
 }

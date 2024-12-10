@@ -29,7 +29,31 @@ module.exports = withNextra({
   },
   async redirects() {
     return [
-      // 如果有重定向规则，请确保它们不会影响 /api/login
+      // 将 HTTP 重定向到 HTTPS
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'header',
+            key: 'x-forwarded-proto',
+            value: 'http',
+          },
+        ],
+        permanent: true,
+        destination: 'https://:path*',
+      },
+      // 将非 www 重定向到 www
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'learn-cursor.com',
+          },
+        ],
+        permanent: true,
+        destination: 'https://www.learn-cursor.com/:path*',
+      },
     ]
   },
   async generateMetadata() {
