@@ -18,7 +18,7 @@ const navItems: NavItem[] = [
   { path: '/docs', label: '中文文档' },
   { path: '/all-tutorials', label: '视频教程' },
   { path: '/posts', label: '文章教程' },
-  { path: 'https://nf.video/Up9Xa', label: ' ChatGPT 合租', isExternal: true },
+//   { path: 'https://nf.video/Up9Xa', label: ' ChatGPT 合租', isExternal: true },
   { path: 'https://changelog.cursor.sh/', label: 'Cursor 历程', isExternal: true },
 ]
 
