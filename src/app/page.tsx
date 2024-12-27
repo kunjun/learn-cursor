@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     siteName: 'Cursor Guide',
     images: [
       {
-        url: '/logo.png',
+        url: '/logo.svg',
         width: 1200,
         height: 630,
         alt: 'Cursor Guide Logo'
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Cursor教程 - AI编程学习平台',
     description: '学习 Cursor 提供了 Cursor Composer 的全面教程，这是 Cursor IDE 和 AI 代码编辑器的核心功能。',
-    images: ['/logo.png']
+    images: ['/logo.svg']
   },
   alternates: {
     canonical: 'https://cursor-guide.vercel.com'

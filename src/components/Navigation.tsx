@@ -38,7 +38,7 @@ export function Navigation() {
           <Link href="https://cursor-guide.vercel.com" className="flex h-14 text-sky-600 items-center">
             <div className="relative w-40 h-10">
               <Image
-                src="/logo.png"
+                src="/logo.svg"
                 alt="Logo"
                 width={160}
                 height={40}

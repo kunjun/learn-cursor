@@ -22,7 +22,7 @@ export function HomeJsonLd({
     '@type': 'Organization',
     name: 'Cursor Guide',
     url: url,
-    logo: `${url}/logo.png`,
+    logo: `${url}/logo.svg`,
     description: description,
   };
 
