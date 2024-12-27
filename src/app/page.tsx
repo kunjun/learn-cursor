@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Cursor教程 - AI编程学习平台',
     description: '学习 Cursor 提供了 Cursor Composer 的全面教程，这是 Cursor IDE 和 AI 代码编辑器的核心功能。',
     type: 'website',
-    url: 'https://learn-cursor.vercel.com',
+    url: 'https://cursor-guide.vercel.com',
     siteName: 'Learn Cursor',
     images: [
       {
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     images: ['/logo.png']
   },
   alternates: {
-    canonical: 'https://learn-cursor.vercel.com'
+    canonical: 'https://cursor-guide.vercel.com'
   }
 }
 
@@ -68,7 +68,7 @@ const faqItems = [
 
 export default function Home() {
   const limitedVideos = videos.slice(0, 6);
-  const websiteUrl = 'https://learn-cursor.vercel.com';
+  const websiteUrl = 'https://cursor-guide.vercel.com';
 
   return (
     <>

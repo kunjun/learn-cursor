@@ -35,7 +35,7 @@ export function Navigation() {
     <header className="sticky top-0 z-40 w-full border-b bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          <Link href="https://learn-cursor.vercel.com" className="flex h-14 text-sky-600 items-center">
+          <Link href="https://cursor-guide.vercel.com" className="flex h-14 text-sky-600 items-center">
             <div className="relative w-40 h-10">
               <Image
                 src="/logo.png"

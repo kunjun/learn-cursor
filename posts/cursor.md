@@ -73,7 +73,7 @@ tags: ["Cursor", "AI编程", "开发工具", "效率提升", "编程教程"]
 ## 6. 支持与反馈
 
 - **文档与教程**：
-  - 访问中文文档 [文档中心](https://learn-cursor.vercel.com/docs) 获取更多使用指南。
+  - 访问中文文档 [文档中心](https://cursor-guide.vercel.com/docs) 获取更多使用指南。
 - **社区论坛**：
   - 加入 [官方 Cursor 社区](https://community.cursor.so)，与其他开发者交流心得。
 - **问题反馈**：

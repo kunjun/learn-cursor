@@ -53,17 +53,17 @@ module.exports = withNextra({
         has: [
           {
             type: 'host',
-            value: 'learn-cursor.vercel.com',
+            value: 'cursor-guide.vercel.com',
           },
         ],
         permanent: true,
-        destination: 'https://learn-cursor.vercel.com/:path*',
+        destination: 'https://cursor-guide.vercel.com/:path*',
       },
     ]
   },
   async generateMetadata() {
     return {
-      metadataBase: new URL('https://learn-cursor.vercel.com'),
+      metadataBase: new URL('https://cursor-guide.vercel.com'),
       alternates: {
         canonical: '/',
       },
