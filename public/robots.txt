@@ -1,2 +1,10 @@
+# *
 User-agent: *
 Allow: /
+
+# Host
+Host: https://cursor-guide.vercel.com
+
+# Sitemaps
+Sitemap: https://cursor-guide.vercel.com/sitemap.xml
+Sitemap: https://cursor-guide.vercel.com/server-sitemap.xml
