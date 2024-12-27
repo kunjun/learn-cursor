@@ -40,7 +40,7 @@ Learn Cursor 是一个专注于 Cursor AI 编程工具的中文学习资源平�
 
 ## 📞 联系我们
 
-- **网站**：[https://www.learn-cursor.com](https://www.learn-cursor.com)
+- **网站**：[https://learn-cursor.vercel.com](https://learn-cursor.vercel.com)
 - **GitHub**：[项目仓库链接]
 - **社交媒体**：[Twitter/微博链接]
 

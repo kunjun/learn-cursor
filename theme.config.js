@@ -37,7 +37,7 @@ export default {
       openGraph: {
         type: 'website',
         locale: 'zh_CN',
-        url: 'https://www.learn-cursor.com',
+        url: 'https://learn-cursor.vercel.com',
         siteName: 'Cursor中文文档',
       },
       twitter: {

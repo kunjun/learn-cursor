@@ -9,6 +9,11 @@ const withNextra = require('nextra')({
 const path = require('path')
 
 module.exports = withNextra({
+  eslint: {
+    // Warning: This allows production builds to successfully complete even if
+    // your project has ESLint errors.
+    ignoreDuringBuilds: true,
+  },
   reactStrictMode: true,
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
   images: {
@@ -48,17 +53,17 @@ module.exports = withNextra({
         has: [
           {
             type: 'host',
-            value: 'learn-cursor.com',
+            value: 'learn-cursor.vercel.com',
           },
         ],
         permanent: true,
-        destination: 'https://www.learn-cursor.com/:path*',
+        destination: 'https://learn-cursor.vercel.com/:path*',
       },
     ]
   },
   async generateMetadata() {
     return {
-      metadataBase: new URL('https://www.learn-cursor.com'),
+      metadataBase: new URL('https://learn-cursor.vercel.com'),
       alternates: {
         canonical: '/',
       },

@@ -4,14 +4,14 @@ export default async function sitemap() {
   const posts = await getPosts()
   
   const postEntries = posts.map((post) => ({
-    url: `https://www.learn-cursor.com/posts/${post.slug}`,
+    url: `https://learn-cursor.vercel.com/posts/${post.slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly',
     priority: 0.7,
   }))
 
   const routes = ['', '/docs', '/all-tutorials'].map((route) => ({
-    url: `https://www.learn-cursor.com${route}`,
+    url: `https://learn-cursor.vercel.com${route}`,
     lastModified: new Date(),
     changeFrequency: 'daily',
     priority: 1,

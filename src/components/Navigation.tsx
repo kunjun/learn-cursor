@@ -35,7 +35,7 @@ export function Navigation() {
     <header className="sticky top-0 z-40 w-full border-b bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          <Link href="https://learn-cursor.com" className="flex h-14 text-sky-600 items-center">
+          <Link href="https://learn-cursor.vercel.com" className="flex h-14 text-sky-600 items-center">
             <div className="relative w-40 h-10">
               <Image
                 src="/logo.png"
@@ -78,7 +78,7 @@ export function Navigation() {
               }
             })}
           </nav>
-          <div className="flex items-center">
+          {/* <div className="flex items-center">
             <Link
               href="https://github.com/geektao1024/learn-cursors-3.0"
               target="_blank"
@@ -88,7 +88,7 @@ export function Navigation() {
               <Github className="h-6 w-6" />
               <span className="sr-only">GitHub</span>
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
     </header>

@@ -1,6 +1,2 @@
-# *
 User-agent: *
 Allow: /
-
-# 指定首选域名
-Sitemap: https://www.learn-cursor.com/sitemap.xml
