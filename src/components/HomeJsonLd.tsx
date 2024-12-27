@@ -20,7 +20,7 @@ export function HomeJsonLd({
   const organizationJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'Learn Cursor',
+    name: 'Cursor Guide',
     url: url,
     logo: `${url}/logo.png`,
     description: description,

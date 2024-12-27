@@ -20,7 +20,7 @@ export function Footer() {
       title: '关于',
       content: (
         <p className="mt-4 text-base text-gray-500">
-          Learn Cursor 是一个专注于提供编程知识和资源的网站，致力于帮助开发者提升技能。
+          Cursor Guide 是一个专注于提供编程知识和资源的网站，致力于帮助开发者提升技能。
         </p>
       ),
     },
@@ -35,8 +35,8 @@ export function Footer() {
     {
       title: '联系我们',
       links: [
-        { name: 'GitHub', href: 'https://github.com/learn-cursor', external: true },
-        { name: 'Twitter', href: 'https://twitter.com/learn_cursor', external: true },
+        // { name: 'GitHub', href: 'https://github.com/learn-cursor', external: true },
+        // { name: 'Twitter', href: 'https://twitter.com/learn_cursor', external: true },
         { name: '支持', href: '/support' },
       ],
     },
@@ -80,7 +80,7 @@ export function Footer() {
         </div>
         <div className="mt-8 border-t border-gray-200 pt-8">
           <p className="text-base text-gray-400 text-center">
-            &copy; {currentYear} Learn Cursor. 保留所有权利。
+            &copy; {currentYear} Cursor Guide. 保留所有权利。
           </p>
         </div>
       </div>

@@ -14,13 +14,13 @@ export const metadata: Metadata = {
     description: '学习 Cursor 提供了 Cursor Composer 的全面教程，这是 Cursor IDE 和 AI 代码编辑器的核心功能。',
     type: 'website',
     url: 'https://cursor-guide.vercel.com',
-    siteName: 'Learn Cursor',
+    siteName: 'Cursor Guide',
     images: [
       {
         url: '/logo.png',
         width: 1200,
         height: 630,
-        alt: 'Learn Cursor Logo'
+        alt: 'Cursor Guide Logo'
       }
     ]
   },
@@ -89,7 +89,7 @@ export default function Home() {
               学习 Cursor <br className="hidden sm:block" /> AI 智能代码编辑器
             </h1>
             <h2 className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-10 max-w-3xl mx-auto leading-relaxed">
-              Learn Cursor 为您提供 Cursor Composer、IDE 和 AI 代码编辑器的全面教程。发现专家提示、视频指南和核心功能，提升您的编码技能。
+              Cursor Guide 为您提供 Cursor Composer、IDE 和 AI 代码编辑器的全面教程。发现专家提示、视频指南和核心功能，提升您的编码技能。
             </h2>
             <div className="flex justify-center space-x-4">
               <Link 

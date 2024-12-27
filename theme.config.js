@@ -7,9 +7,9 @@ import { useRouter } from 'next/router'
 export default {
   // 主题配置
   project: {
-    link: 'https://github.com/geektao/learn-cursors-3.0', // 替换为您的 GitHub 仓库链接
+    link: '', // 替换为您的 GitHub 仓库链接
   },
-  docsRepositoryBase: 'https://github.com/geektao/learn-cursors-3.0/tree/main/src/docs', // 替换为您的文档仓库链接
+  docsRepositoryBase: '', // 替换为您的文档仓库链接
   titleSuffix: ' – Cursor 中文文档',
   logo: (
     <>

@@ -1,8 +1,8 @@
-# Learn Cursor - Cursor AI 编程工具中文教程与资源
+# Cursor Guide - Cursor AI 编程工具中文教程与资源
 
 ## 项目简介
 
-Learn Cursor 是一个专注于 Cursor AI 编程工具的中文学习资源平台。我们致力于帮助开发者全面了解和高效使用 Cursor，提升编程效率和技能。本项目使用 Next.js 14 构建，提供全面的中文教程、视频指南和最佳实践。
+Cursor Guide 是一个专注于 Cursor AI 编程工具的中文学习资源平台。我们致力于帮助开发者全面了解和高效使用 Cursor，提升编程效率和技能。本项目使用 Next.js 14 构建，提供全面的中文教程、视频指南和最佳实践。
 
 ## 🚀 主要特色
 

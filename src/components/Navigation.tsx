@@ -80,7 +80,7 @@ export function Navigation() {
           </nav>
           {/* <div className="flex items-center">
             <Link
-              href="https://github.com/geektao1024/learn-cursors-3.0"
+              href="https://github.com/kunjun/cursor-guide"
               target="_blank"
               rel="noopener noreferrer"
               className="text-stone-500 hover:text-blue-600 transition duration-300"
