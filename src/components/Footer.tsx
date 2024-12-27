@@ -35,8 +35,8 @@ export function Footer() {
     {
       title: '联系我们',
       links: [
-        // { name: 'GitHub', href: 'https://github.com/learn-cursor', external: true },
-        // { name: 'Twitter', href: 'https://twitter.com/learn_cursor', external: true },
+        // { name: 'GitHub', href: 'https://github.com/kunjun/cursor-guide', external: true },
+        // { name: 'Twitter', href: 'https://twitter.com/cursor-guide', external: true },
         { name: '支持', href: '/support' },
       ],
     },
